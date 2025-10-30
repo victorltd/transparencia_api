@@ -49,7 +49,7 @@ def obter_dados_api(codigo_orgao, data_inicial):
     return dados_paginas
 
 
-def criar_dataframe(codigo_orgao="26230", data_inicial="01/01/2020"):
+def criar_dataframe(codigo_orgao="26230", data_inicial="01/01/2025"):
     dados_contratos = obter_dados_api(codigo_orgao, data_inicial)
     if dados_contratos:
         return pd.DataFrame(dados_contratos)
