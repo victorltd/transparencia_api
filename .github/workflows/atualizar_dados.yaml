@@ -1,0 +1,48 @@
+name: atualizar_dados
+
+on:
+  schedule:
+    # Executa todo dia às 03:00 BRT (UTC-3). GitHub Actions usa UTC, por isso 06:00 UTC = 03:00 BRT.
+    - cron: '0 6 * * *'
+  workflow_dispatch: {}  # permite disparo manual
+
+permissions:
+  contents: write  # permite que o job faça commit/push no repositório
+
+jobs:
+  atualizar-dados:
+    runs-on: ubuntu-latest
+    env:
+      PORTAL_API_KEY: ${{ secrets.PORTAL_API_KEY }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+        with:
+          persist-credentials: true
+
+      - name: Setup Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+      - name: Run coleta script
+        run: python coleta.py
+
+      - name: Commit CSV se houver mudanças
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          # Ajuste os nomes de arquivo abaixo conforme o script (ex.: dados_contratos.csv ou df_final_corrigido.csv)
+          if git status --porcelain | grep -qE 'df_final_corrigido.csv|dados_contratos.csv'; then
+            git add df_final_corrigido.csv || true
+            git add dados_contratos.csv || true
+            git commit -m "Atualiza dados_contratos.csv — $(date -u +'%Y-%m-%d')" || echo "Sem mudanças para commitar"
+            git push
+          else
+            echo "Nenhuma alteração no CSV para commitar"
+          fi
