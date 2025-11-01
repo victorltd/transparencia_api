@@ -425,76 +425,8 @@ if pagina_selecionada == "Visão Geral (Contratos)":
         fig_linha.update_layout(hovermode="x unified")
         st.plotly_chart(fig_linha, use_container_width=True)
 
-        # --- MÉDIO: HHI (Concentração por Mês) ---
-        st.markdown("### Índice de Concentração de Fornecedores (HHI) — por Mês")
-        # detecta coluna de CNPJ para preferir ao nome
-        cnpj_col = _find_col(df_contratos, ['fornecedor.cnpjFormatado', 'fornecedor.cnpj', 'fornecedor.cnpjFormatado', 'fornecedor.cnpjFormatadoReceita'])
-        forn_name_col = _find_col(df_contratos, ['fornecedor.nome', 'fornecedorNome', 'nome_fornecedor', 'nomeFornecedor'])
-
-        # cria coluna supplier_id preferindo CNPJ sem pontuação, senão nome normalizado
-        df_hhi = df_filtrado.copy()
-        if cnpj_col and cnpj_col in df_hhi.columns:
-            df_hhi['supplier_id'] = df_hhi[cnpj_col].astype(str).str.replace(r'\D', '', regex=True).replace({'': pd.NA})
-        else:
-            df_hhi['supplier_id'] = pd.NA
-
-        if df_hhi['supplier_id'].isna().all() and forn_name_col:
-            # fallback para nome (normalizado)
-            df_hhi['supplier_id'] = df_hhi[forn_name_col].astype(str).str.strip().str.upper()
-
-        if 'supplier_id' in df_hhi.columns and 'valorInicialCompra' in df_hhi.columns and 'dataAssinatura' in df_hhi.columns:
-            # agrega por mês e fornecedor
-            df_hhi['month'] = pd.to_datetime(df_hhi['dataAssinatura']).dt.to_period('M').dt.to_timestamp()
-            grp = df_hhi.groupby(['month', 'supplier_id'])['valorInicialCompra'].sum().reset_index()
-            # pivot to compute shares
-            pivot = grp.pivot(index='month', columns='supplier_id', values='valorInicialCompra').fillna(0)
-            shares = pivot.div(pivot.sum(axis=1), axis=0).fillna(0)
-            hhi = (shares ** 2).sum(axis=1)
-            hhi_df = hhi.reset_index(name='hhi')
-            # interpret HHI: closer to 1 is more concentrated
-            hhi_df['hhi_pct'] = hhi_df['hhi'] * 100
-
-            fig_hhi = px.line(hhi_df, x='month', y='hhi_pct', title='HHI (%) — concentração por fornecedor (mensal)', color_discrete_sequence=COLOR_PALETTE)
-            st.plotly_chart(fig_hhi, use_container_width=True)
-
-            last_hhi = hhi_df.iloc[-1]['hhi'] if not hhi_df.empty else pd.NA
-            if pd.notna(last_hhi):
-                st.metric('HHI atual', f"{last_hhi*100:.2f}%", help='HHI calculado como soma dos quadrados das participações dos fornecedores por mês (0-100%). Valores maiores indicam maior concentração.')
-        else:
-            st.info('Dados insuficientes para calcular HHI (fornecedor, valor ou data faltando).')
-
-        # --- MÉDIO: Lead time (publicação DOU -> assinatura) ---
-        st.markdown('### Lead Time: publicação (DOU) → assinatura')
-        if 'dataPublicacaoDOU' in df_filtrado.columns and 'dataAssinatura' in df_filtrado.columns:
-            df_lead = df_filtrado.copy()
-            df_lead['dataPublicacaoDOU'] = pd.to_datetime(df_lead['dataPublicacaoDOU'], errors='coerce')
-            df_lead['dataAssinatura'] = pd.to_datetime(df_lead['dataAssinatura'], errors='coerce')
-            df_lead['lead_days'] = (df_lead['dataAssinatura'] - df_lead['dataPublicacaoDOU']).dt.days
-            df_lead = df_lead[df_lead['lead_days'].notna()]
-
-            if not df_lead.empty:
-                mean_ld = df_lead['lead_days'].mean()
-                med_ld = df_lead['lead_days'].median()
-                p90_ld = df_lead['lead_days'].quantile(0.9)
-                c1, c2, c3 = st.columns(3)
-                c1.metric('Lead médio (dias)', f"{mean_ld:.1f}")
-                c2.metric('Lead mediano (dias)', f"{med_ld:.1f}")
-                c3.metric('90p lead (dias)', f"{p90_ld:.1f}")
-
-                # boxplot por modalidade (se existir)
-                if 'modalidadeCompra' in df_lead.columns:
-                    fig_lead_box = px.box(df_lead, x='modalidadeCompra', y='lead_days', title='Lead time por modalidade (dias)', labels={'lead_days': 'Lead (dias)', 'modalidadeCompra': 'Modalidade'}, color_discrete_sequence=COLOR_PALETTE)
-                    st.plotly_chart(fig_lead_box, use_container_width=True)
-
-                # boxplot por UG (se existir)
-                ug_col_local = _find_col(df_contratos, ['unidadeGestora.nome', 'unidade_gestora', 'nome_uge'])
-                if ug_col_local and ug_col_local in df_lead.columns:
-                    fig_lead_ug = px.box(df_lead, x=ug_col_local, y='lead_days', title='Lead time por Unidade Gestora (dias)', color_discrete_sequence=COLOR_PALETTE)
-                    st.plotly_chart(fig_lead_ug, use_container_width=True)
-            else:
-                st.info('Sem dados válidos de publicação/assinatura para calcular lead times.')
-        else:
-            st.info('Colunas de dataPublicacaoDOU/dataAssinatura ausentes — pulando lead time.')
+       
+        
 
         # --- MÉDIO: Fornecedores recorrentes com normalização por CNPJ ---
         st.markdown('### Fornecedores recorrentes (CNPJ-normalizado quando disponível)')
