@@ -140,6 +140,76 @@ def gerar_nuvem_palavras(df):
     ax.axis('off')
     st.pyplot(fig)
 
+
+# Helper para detectar coluna de fornecedor (nome preferencial, fallback para CNPJ)
+def detect_fornecedor_column(df):
+    """
+    Tenta localizar uma coluna que represente o fornecedor.
+    Preferência por colunas de nome (razao social / nome), mas aceita
+    colunas de CNPJ como 'cnpjFormatado' quando nomes não existem.
+    Retorna o nome da coluna ou None.
+    """
+    name_candidates = ['nome_fornecedor', 'nomeFornecedor', 'fornecedor.nome', 'fornecedorNome', 'fornecedor.razaoSocialReceita', 'fornecedor.nomeFantasiaReceita', 'razao_social', 'razaoSocial']
+    for c in name_candidates:
+        if c in df.columns:
+            return c
+        # case-insensitive
+        for col in df.columns:
+            if col.lower() == c.lower():
+                return col
+
+    # fallback: colunas de CNPJ que provavelmente identificam o fornecedor
+    cnpj_candidates = ['cnpjFormatado', 'fornecedor.cnpj', 'cnpj']
+    for c in cnpj_candidates:
+        if c in df.columns:
+            return c
+        for col in df.columns:
+            if col.lower() == c.lower():
+                return col
+
+    # última tentativa: alguma coluna contendo 'fornecedor' no nome
+    for col in df.columns:
+        if 'fornecedor' in col.lower():
+            return col
+
+    return None
+
+
+def find_supplier_name_column(df):
+    """
+    Tenta identificar uma coluna que contenha o nome legível do fornecedor
+    (razão social / nome fantasia) mesmo que a coluna tenha um nome inesperado
+    como 'nome_uge'. Retorna o nome da coluna ou None.
+    Heurística simples baseada em amostra de valores: prefere colunas com
+    maioria de entradas alfabéticas e com palavras-chave típicas de empresas
+    (LTDA, S/A, FUNDACAO, EIRELI, SERVICOS, TECNOLOGIA, etc.).
+    """
+    keywords = ['ltda', 'ltda', 's/a', 'fundacao', 'fundação', 'fundacao', 'servicos', 'serviços', 'tecnologia', 'comercio', 'empresa', 'assessoria', 'assessoria', 'industria', 'indústria', 'instituto']
+    best_col = None
+    best_score = 0.0
+    for col in df.columns:
+        # skip obvious numeric/date/value columns
+        if pd.api.types.is_numeric_dtype(df[col]):
+            continue
+        sample = df[col].dropna().astype(str).head(200)
+        if sample.empty:
+            continue
+        # fraction of sample entries containing letters
+        frac_alpha = (sample.str.contains('[A-Za-zÀ-ÿ]', regex=True)).mean()
+        # fraction that are purely numeric
+        frac_numeric = (sample.str.match(r'^\d+$', na=False)).mean()
+        # keyword presence
+        kw_hits = sum(sample.str.lower().str.contains(kw, na=False).any() for kw in keywords)
+
+        # score combines alphabetic fraction and keyword hits, penalize numeric heavy columns
+        score = frac_alpha - frac_numeric * 0.5 + (0.1 * kw_hits)
+        if score > best_score and frac_alpha > 0.5:
+            best_score = score
+            best_col = col
+
+    # Heuristic: if we found a reasonable candidate, return it
+    return best_col
+
 # --- BLOCO 5: LAYOUT DA INTERFACE (Sidebar e Filtros) ---
 
 st.sidebar.title("Portal da Transparência - UNIVASF")
@@ -183,7 +253,7 @@ if not df_contratos.empty:
     )
 
     # AJUSTADO: Usa 'nome_uge' (conforme sua imagem)
-    # Detecta coluna de Unidade Gestora entre possíveis variantes
+    # Detecta coluna entre candidatos (helper usado em várias partes do app)
     def _find_col(df, candidates):
         for c in candidates:
             if c in df.columns:
@@ -195,23 +265,37 @@ if not df_contratos.empty:
                         return col
         return None
 
-    # Unidade Gestora presente, mas neste dataset existe apenas uma UG —
-    # portanto desabilitamos filtros/visuais por UG para evitar gráficos triviais.
-    ug_col = _find_col(df_contratos, ['nome_uge', 'nomeUge', 'unidadeGestora.nome', 'unidadegestora.nome', 'unidade_gestora', 'unidadeGestoraNome'])
-    if ug_col:
-        st.sidebar.info("Unidade Gestora detectada — filtro desabilitado (apenas 1 UG presente no dataset).")
+    # Unidade Gestora: usar explicitamente a coluna 'unidadeGestora.orgaoVinculado.sigla'
+    # (com alguns nomes alternativos como fallback). Removemos heurísticas complexas
+    # para obedecer ao requisito de usar a coluna específica.
+    ug_col = _find_col(df_contratos, ['unidadeGestora.orgaoVinculado.sigla', 'orgaovinculado.sigla', 'orgaoVinculado.sigla', 'nome_uge', 'uge'])
+    if ug_col and ug_col in df_contratos.columns:
+        # valores únicos (limpos) — se houver mais de um, ofereça filtro na sidebar
+        ug_values = (df_contratos[ug_col].astype(str).str.strip().replace({'nan': None}).dropna().unique().tolist())
+        if len(ug_values) <= 1:
+            st.sidebar.info("Unidade Gestora detectada — apenas 1 UG presente no dataset; filtro desabilitado.")
+            ug_selected = None
+        else:
+            ug_values_sorted = sorted(ug_values)
+            ug_options = ['Todos'] + ug_values_sorted
+            ug_selected = st.sidebar.selectbox("Unidade Gestora", options=ug_options, index=0, key="filtro_ug")
     else:
+        ug_col = None
+        ug_selected = None
         st.sidebar.info("Unidade Gestora não detectada — filtros por UG desabilitados.")
 
     # --- BLOCO 6: LÓGICA DE FILTRAGEM ---
     data_inicio_ts = pd.to_datetime(data_inicio)
     data_fim_ts = pd.to_datetime(data_fim)
 
-    # AJUSTADO: Filtra por 'dataAssinatura'
+    # AJUSTADO: Filtra por 'dataAssinatura' e por Unidade Gestora quando selecionada
     df_filtrado = df_contratos[
         (df_contratos['dataAssinatura'] >= data_inicio_ts) &
         (df_contratos['dataAssinatura'] <= data_fim_ts)
     ]
+    if ug_col and ug_selected and ug_selected != 'Todos':
+        # aplica filtro por UG (comparação de strings limpadas)
+        df_filtrado = df_filtrado[df_filtrado[ug_col].astype(str).str.strip() == str(ug_selected).strip()]
 
     # Não filtramos por Unidade Gestora neste dataset (apenas uma UG presente)
 
@@ -251,16 +335,85 @@ if pagina_selecionada == "Visão Geral (Contratos)":
 
         st.markdown("---")
 
+        # --- BLOCO: Gasto por Unidade Gestora e Aditivos por UG (linha inteira abaixo dos KPIs)
+        st.markdown("### Análises por Unidade Gestora")
+        ug_left, ug_right = st.columns(2)
+
+        # Determina coluna UG preferida
+        ug_for_plot = ug_col if (ug_col and ug_col in df_filtrado.columns) else _find_col(df_contratos, ['unidadeGestora.orgaoVinculado.sigla', 'orgaovinculado.sigla', 'orgaoVinculado.sigla', 'nome_uge', 'uge'])
+
+        with ug_left:
+            st.markdown("#### Gasto por Unidade Gestora (Top 10)")
+            if ug_for_plot and ug_for_plot in df_filtrado.columns and 'valorInicialCompra' in df_filtrado.columns:
+                df_ug = df_filtrado.copy()
+                df_ug['ug_label'] = df_ug[ug_for_plot].astype(str).str.strip().fillna('--N/A--')
+                df_ug_sum = df_ug.groupby('ug_label')['valorInicialCompra'].sum().reset_index()
+                if not df_ug_sum.empty:
+                    top_ug = df_ug_sum.nlargest(10, 'valorInicialCompra').sort_values('valorInicialCompra')
+                    fig_ug = px.bar(
+                        top_ug,
+                        x='valorInicialCompra',
+                        y='ug_label',
+                        orientation='h',
+                        title='Top 10 Unidade Gestora por Valor Contratado',
+                        labels={'valorInicialCompra': 'Valor Total (R$)', 'ug_label': 'Unidade Gestora'},
+                        color_discrete_sequence=COLOR_PALETTE
+                    )
+                    st.plotly_chart(fig_ug, use_container_width=True, key='ug_gasto_top10_main')
+                else:
+                    st.info("Não há valores por Unidade Gestora para o período selecionado.")
+            else:
+                st.info("Unidade Gestora não detectada ou coluna de valor ausente — pulando análise de UG.")
+
+        with ug_right:
+            st.markdown("#### Total em Aditivos por Unidade Gestora (Top 10)")
+            if 'valorInicialCompra' in df_filtrado.columns and 'valorFinalCompra' in df_filtrado.columns:
+                if ug_for_plot and ug_for_plot in df_filtrado.columns:
+                    df_ad_ug = df_filtrado.copy()
+                    df_ad_ug['aditivo'] = df_ad_ug['valorFinalCompra'] - df_ad_ug['valorInicialCompra']
+                    df_ad_pos = df_ad_ug[df_ad_ug['aditivo'] > 0].copy()
+                    if df_ad_pos.empty:
+                        st.info('Nenhum aditivo positivo encontrado no período selecionado para as Unidades Gestoras.')
+                    else:
+                        df_ad_pos['ug_label'] = df_ad_pos[ug_for_plot].astype(str).str.strip().fillna('--N/A--')
+                        sum_ad_ug = df_ad_pos.groupby('ug_label')['aditivo'].sum().reset_index()
+                        top_ad_ug = sum_ad_ug.nlargest(10, 'aditivo').sort_values('aditivo')
+                        fig_ad_ug = px.bar(
+                            top_ad_ug,
+                            x='aditivo',
+                            y='ug_label',
+                            orientation='h',
+                            title='Top 10 Unidades Gestoras por Total em Aditivos (R$)',
+                            labels={'aditivo': 'Total Aditivos (R$)', 'ug_label': 'Unidade Gestora'},
+                            color_discrete_sequence=COLOR_PALETTE
+                        )
+                        st.plotly_chart(fig_ad_ug, use_container_width=True, key='ug_aditivos_top10_main')
+                else:
+                    st.info('Coluna de Unidade Gestora não encontrada para agrupar aditivos.')
+            else:
+                st.info('Colunas de valor ausentes — não é possível calcular aditivo por UG.')
+
         # --- BLOCO RÁPIDO: Top-N share, Anomalias em Aditivos (IQR), Resumo por Modalidade ---
         st.markdown("### Análises Rápidas: Concentração, Anomalias e Resumo por Modalidade")
         # configurações rápidas via sidebar
         pareto_top_n = st.sidebar.number_input("Top N (Pareto)", min_value=5, max_value=100, value=10, step=5, key="pareto_top_n")
 
         # 1) Top-N share (Pareto)
-        fornecedor_col = _find_col(df_contratos, ['nome_fornecedor', 'nomeFornecedor', 'fornecedor.nome', 'fornecedorNome', 'fornecedor.razaoSocialReceita', 'fornecedor.nomeFantasiaReceita'])
-        if fornecedor_col and 'valorInicialCompra' in df_filtrado.columns:
+        # Detecta coluna de nome legível do fornecedor (quando disponível) e
+        # coluna identificadora (CNPJ) como fallback.
+        fornecedor_name_col = find_supplier_name_column(df_contratos)
+        fornecedor_id_col = detect_fornecedor_column(df_contratos)
+
+        # preferir nome legível para agrupamento/rotulagem, senão usar id (CNPJ)
+        group_col = None
+        if fornecedor_name_col and fornecedor_name_col in df_filtrado.columns:
+            group_col = fornecedor_name_col
+        elif fornecedor_id_col and fornecedor_id_col in df_filtrado.columns:
+            group_col = fornecedor_id_col
+
+        if group_col and 'valorInicialCompra' in df_filtrado.columns:
             df_sum = (
-                df_filtrado.groupby(fornecedor_col)['valorInicialCompra']
+                df_filtrado.groupby(group_col)['valorInicialCompra']
                 .sum()
                 .reset_index(name='valor')
                 .sort_values('valor', ascending=False)
@@ -277,13 +430,13 @@ if pagina_selecionada == "Visão Geral (Contratos)":
                 st.markdown("#### Participação dos principais fornecedores (Top N)")
                 fig_pareto = px.bar(
                     top_df,
-                    x=fornecedor_col,
+                    x=group_col,
                     y='valor',
                     title=f'Top {int(pareto_top_n)} Fornecedores por Valor',
-                    labels={fornecedor_col: 'Fornecedor', 'valor': 'Valor (R$)'},
+                    labels={group_col: 'Fornecedor', 'valor': 'Valor (R$)'},
                     color_discrete_sequence=COLOR_PALETTE
                 )
-                st.plotly_chart(fig_pareto, use_container_width=True)
+                st.plotly_chart(fig_pareto, use_container_width=True, key='pareto_chart')
 
                 # Mostra KPI resumidos para Top1/Top5/Top10
                 k1 = df_sum.head(1)['share'].sum() if len(df_sum) >= 1 else 0
@@ -333,13 +486,13 @@ if pagina_selecionada == "Visão Geral (Contratos)":
                         labels={'aditivo_pct': 'Aditivo (%)', 'dataAssinatura': 'Data de Assinatura'},
                         color_discrete_sequence=COLOR_PALETTE
                     )
-                    st.plotly_chart(fig_anom, use_container_width=True)
+                    st.plotly_chart(fig_anom, use_container_width=True, key='anomalies_chart')
 
                 # mostra tabela com top anomalias (ordenar por aditivo_pct desc)
                 if not anomalies.empty:
                     disp_cols = []
-                    if fornecedor_col and fornecedor_col in anomalies.columns:
-                        disp_cols.append(fornecedor_col)
+                    if group_col and group_col in anomalies.columns:
+                        disp_cols.append(group_col)
                     if 'numero' in anomalies.columns:
                         disp_cols.append('numero')
                     disp_cols += ['valorInicialCompra', 'valorFinalCompra', 'aditivo', 'aditivo_pct']
@@ -356,7 +509,7 @@ if pagina_selecionada == "Visão Geral (Contratos)":
                         disp['aditivo_pct'] = disp['aditivo_pct'].map(lambda v: f"{v*100:.1f}%" if pd.notna(v) else "N/A")
 
                     with st.expander("Ver top anomalias (IQR)"):
-                        disp = disp.rename(columns={fornecedor_col: 'fornecedor'}) if fornecedor_col and fornecedor_col in disp.columns else disp
+                        disp = disp.rename(columns={group_col: 'fornecedor'}) if group_col and group_col in disp.columns else disp
                         st.dataframe(disp)
                 else:
                     st.info('Nenhuma anomalia detectada pelo método IQR para o período selecionado.')
@@ -423,7 +576,7 @@ if pagina_selecionada == "Visão Geral (Contratos)":
             color_discrete_sequence=COLOR_PALETTE
         )
         fig_linha.update_layout(hovermode="x unified")
-        st.plotly_chart(fig_linha, use_container_width=True)
+        st.plotly_chart(fig_linha, use_container_width=True, key='temporal_line_chart')
 
        
         
@@ -483,7 +636,7 @@ if pagina_selecionada == "Visão Geral (Contratos)":
                     labels={'supplier_label': 'Fornecedor', 'contratos': 'Número de Contratos'},
                     color_discrete_sequence=COLOR_PALETTE
                 )
-                st.plotly_chart(fig_recorr, use_container_width=True)
+                st.plotly_chart(fig_recorr, use_container_width=True, key='recorrentes_chart')
 
                 with st.expander('Ver tabela de fornecedores recorrentes (Top 10)'):
                     disp = top_rec.copy()
@@ -552,7 +705,7 @@ if pagina_selecionada == "Visão Geral (Contratos)":
                     labels={'large_aditivos_count': 'Contratos com Aditivo (contagem)', fornecedor_col: 'Fornecedor'},
                     color_discrete_sequence=COLOR_PALETTE
                 )
-                st.plotly_chart(fig_rec, use_container_width=True)
+                st.plotly_chart(fig_rec, use_container_width=True, key='aditivos_recorrentes_chart')
 
                 # tabela detalhada
                 with st.expander(f"Ver tabela detalhada (Top {int(top_n)})"):
@@ -584,11 +737,51 @@ if pagina_selecionada == "Visão Geral (Contratos)":
                 labels={'count': 'Quantidade', 'modalidadeCompra': 'Modalidade'},
                 color_discrete_sequence=COLOR_PALETTE
             )
-            st.plotly_chart(fig_modalidade, use_container_width=True)
-
+            st.plotly_chart(fig_modalidade, use_container_width=True, key='modalidade_chart')
         with col_l3_2:
-            st.markdown("### Gasto por Unidade Gestora (Top 10)")
-            st.info("Análise por Unidade Gestora desabilitada (apenas uma UG presente no conjunto de dados).")
+            st.markdown("### Gasto por Unidade Gestora (movido)")
+            st.info("Os gráficos de Gasto e Aditivos por Unidade Gestora foram movidos para a seção superior, abaixo dos KPIs.")
+
+            # --- Gráfico: Total em Aditivos por Unidade Gestora (Top 10) ---
+            st.markdown("#### Total em Aditivos por Unidade Gestora (Top 10)")
+            # precisamos das colunas de valor
+            if 'valorInicialCompra' in df_filtrado.columns and 'valorFinalCompra' in df_filtrado.columns:
+                # escolhe coluna UG disponível (prefer ug_col definido no sidebar)
+                ug_for_ad = ug_col if (ug_col and ug_col in df_filtrado.columns) else _find_col(df_contratos, ['unidadeGestora.orgaoVinculado.sigla', 'orgaovinculado.sigla', 'orgaoVinculado.sigla', 'nome_uge', 'uge'])
+                if ug_for_ad and ug_for_ad in df_filtrado.columns:
+                    df_ad_ug = df_filtrado.copy()
+                    df_ad_ug['aditivo'] = df_ad_ug['valorFinalCompra'] - df_ad_ug['valorInicialCompra']
+                    # considera apenas aditivos positivos (incrementos)
+                    df_ad_pos = df_ad_ug[df_ad_ug['aditivo'] > 0].copy()
+                    if df_ad_pos.empty:
+                        st.info('Nenhum aditivo positivo encontrado no período selecionado para as Unidades Gestoras.')
+                    else:
+                        df_ad_pos['ug_label'] = df_ad_pos[ug_for_ad].astype(str).str.strip().fillna('--N/A--')
+                        sum_ad_ug = df_ad_pos.groupby('ug_label')['aditivo'].sum().reset_index()
+                        if sum_ad_ug.empty:
+                            st.info('Sem valores de aditivo por UG.')
+                        else:
+                            top_ad_ug = sum_ad_ug.nlargest(10, 'aditivo').sort_values('aditivo')
+                            fig_ad_ug = px.bar(
+                                top_ad_ug,
+                                x='aditivo',
+                                y='ug_label',
+                                orientation='h',
+                                title='Top 10 Unidades Gestoras por Total em Aditivos (R$)',
+                                labels={'aditivo': 'Total Aditivos (R$)', 'ug_label': 'Unidade Gestora'},
+                                color_discrete_sequence=COLOR_PALETTE
+                            )
+                            st.plotly_chart(fig_ad_ug, use_container_width=True, key='ug_aditivos_top10_lower')
+
+                            with st.expander('Ver tabela detalhada de aditivos por UG (Top 10)'):
+                                disp = top_ad_ug.copy()
+                                disp['aditivo'] = disp['aditivo'].map(lambda v: f"R$ {v:,.2f}")
+                                disp = disp.rename(columns={'ug_label': 'unidade_gestora', 'aditivo': 'total_aditivo'})
+                                st.dataframe(disp)
+                else:
+                    st.info('Coluna de Unidade Gestora não encontrada para agrupar aditivos.')
+            else:
+                st.info('Colunas de valor ausentes — não é possível calcular aditivo por UG.')
 
         st.markdown("---")
 
@@ -620,7 +813,7 @@ if pagina_selecionada == "Visão Geral (Contratos)":
                     labels={'valorInicialCompra': 'Valor Total (R$)', fornecedor_col: 'Fornecedor'},
                     color_discrete_sequence=COLOR_PALETTE
                 )
-                st.plotly_chart(fig_fornecedor, use_container_width=True)
+                st.plotly_chart(fig_fornecedor, use_container_width=True, key='fornecedor_top10_chart')
             else:
                 st.info("Colunas de fornecedor/valor ausentes — pulando gráfico de fornecedores.")
 
@@ -638,7 +831,7 @@ if pagina_selecionada == "Visão Geral (Contratos)":
                     hole=0.3,
                     color_discrete_sequence=COLOR_PALETTE
                 )
-                st.plotly_chart(fig_tipo, use_container_width=True)
+                st.plotly_chart(fig_tipo, use_container_width=True, key='fornecedor_tipo_pie')
             else:
                 st.info("Colunas para distribuição por tipo de fornecedor ausentes — pulando gráfico.")
 
@@ -663,7 +856,7 @@ if pagina_selecionada == "Visão Geral (Contratos)":
                         labels={'valor_aditivo': 'Total Aditivos (R$)', fornecedor_col: 'Fornecedor'},
                         color_discrete_sequence=COLOR_PALETTE
                     )
-                    st.plotly_chart(fig_risco, use_container_width=True)
+                    st.plotly_chart(fig_risco, use_container_width=True, key='fornecedor_risco_chart')
 
                     with st.expander("Ver tabela de fornecedores com maiores aditivos"):
                         disp = df_risco_forn.copy()
@@ -735,7 +928,7 @@ if pagina_selecionada == "Visão Geral (Contratos)":
                         color_discrete_sequence=COLOR_PALETTE
                     )
                     fig_aditivos.update_layout(margin=dict(l=80))
-                    st.plotly_chart(fig_aditivos, use_container_width=True)
+                    st.plotly_chart(fig_aditivos, use_container_width=True, key='top_aditivos_chart')
 
                     # mostra a tabela resumida (formatando valores)
                     with st.expander("Ver tabela dos Top 10 Aditivos"):
@@ -786,7 +979,7 @@ if pagina_selecionada == "Visão Geral (Contratos)":
                         labels={'duracao_dias': 'Duração (dias)'},
                         color_discrete_sequence=COLOR_PALETTE
                     )
-                    st.plotly_chart(fig_dur, use_container_width=True)
+                    st.plotly_chart(fig_dur, use_container_width=True, key='duracao_histogram')
 
                     # mostra contagens de contratos longos
                     st.markdown(f"Contratos >1 ano: **{count_gt_1y}** • >3 anos: **{count_gt_3y}** • >5 anos: **{count_gt_5y}**")
@@ -818,7 +1011,7 @@ if pagina_selecionada == "Visão Geral (Contratos)":
                         color_discrete_sequence=COLOR_PALETTE
                     )
                     fig_box.update_layout(xaxis={'categoryorder':'total descending'})
-                    st.plotly_chart(fig_box, use_container_width=True)
+                    st.plotly_chart(fig_box, use_container_width=True, key='box_modalidade')
                 else:
                     st.info('Dados insuficientes para boxplot por modalidade.')
             else:
@@ -839,7 +1032,7 @@ if pagina_selecionada == "Visão Geral (Contratos)":
                         hole=0.4,
                         color_discrete_sequence=COLOR_PALETTE
                     )
-                    st.plotly_chart(fig_status, use_container_width=True)
+                    st.plotly_chart(fig_status, use_container_width=True, key='status_pie')
                 else:
                     st.info('Nenhuma informação de situação encontrada no período.')
             else:
@@ -922,7 +1115,7 @@ if pagina_selecionada == "Visão Geral (Contratos)":
                 group_for = df_filtered_search.groupby('fornecedor_name')['valorInicialCompra'].sum().reset_index().sort_values('valorInicialCompra', ascending=False).head(5)
                 st.markdown("#### Top 5 Fornecedores no filtro (por Valor)")
                 fig_topf = px.bar(group_for, x='valorInicialCompra', y='fornecedor_name', orientation='h', labels={'valorInicialCompra':'Valor (R$)', 'fornecedor_name':'Fornecedor'}, color_discrete_sequence=COLOR_PALETTE)
-                st.plotly_chart(fig_topf, use_container_width=True)
+                st.plotly_chart(fig_topf, use_container_width=True, key='topf_chart')
 
         # mostra tabela detalhada (expansível)
         with st.expander("Clique para visualizar os dados filtrados"):
