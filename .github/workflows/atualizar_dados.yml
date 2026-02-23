@@ -2,12 +2,12 @@ name: atualizar_dados
 
 on:
   schedule:
-    # Executa todo dia às 03:00 BRT (UTC-3). GitHub Actions usa UTC, por isso 06:00 UTC = 03:00 BRT.
+    # Executa todo dia às 03:00 BRT (UTC-3).
     - cron: '0 6 * * *'
-  workflow_dispatch: {}  # permite disparo manual
+  workflow_dispatch: {} 
 
 permissions:
-  contents: write  # permite que o job faça commit/push no repositório
+  contents: write 
 
 jobs:
   atualizar-dados:
@@ -30,19 +30,23 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r requirements.txt
 
-      - name: Run coleta script
+      - name: Run coleta contratos
         run: python coleta.py
+
+      - name: Run coleta despesas
+        run: python coleta_despesas.py
 
       - name: Commit CSV se houver mudanças
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          # Ajuste os nomes de arquivo abaixo conforme o script (ex.: dados_contratos.csv ou df_final_corrigido.csv)
-          if git status --porcelain | grep -qE 'df_final_corrigido.csv|dados_contratos.csv'; then
+          
+          # Verifica mudanças em ambos os arquivos CSV
+          if git status --porcelain | grep -qE 'df_final_corrigido.csv|df_despesas_nordeste.csv'; then
             git add df_final_corrigido.csv || true
-            git add dados_contratos.csv || true
-            git commit -m "Atualiza dados_contratos.csv — $(date -u +'%Y-%m-%d')" || echo "Sem mudanças para commitar"
+            git add df_despesas_nordeste.csv || true
+            git commit -m "Auto-update: Contratos e Despesas — $(date -u +'%Y-%m-%d')"
             git push
           else
-            echo "Nenhuma alteração no CSV para commitar"
+            echo "Nenhuma alteração nos arquivos CSV para commitar"
           fi

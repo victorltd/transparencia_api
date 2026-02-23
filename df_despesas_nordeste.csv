@@ -1,0 +1,332 @@
+ano;orgao;codigoOrgao;orgaoSuperior;codigoOrgaoSuperior;empenhado;liquidado;pago
+2015;Universidade Federal de Alagoas;26231;Ministério da Educação;26000;842157404.17;797599316.24;782068292.97
+2015;Universidade Federal da Bahia;26232;Ministério da Educação;26000;1666184223.32;1609587560.69;1565783031.74
+2015;Universidade Federal do Oeste da Bahia;26447;Ministério da Educação;26000;40116407.17;29980201.17;29901224.48
+2015;Universidade Federal do Recôncavo da Bahia;26351;Ministério da Educação;26000;210407803.41;204750045.82;199497952.61
+2015;Universidade Federal do Sul da Bahia;26450;Ministério da Educação;26000;42855705.05;35186767.25;34536318.69
+2015;Universidade Federal do Ceará;26233;Ministério da Educação;26000;1492337253.74;1427407219.97;1415001113.8
+2015;Universidade Federal do Cariri;26449;Ministério da Educação;26000;72896271.43;60091069.13;59799103.97
+2015;Universidade da Integração Internacional da Lusofonia Afro-Brasileira;26442;Ministério da Educação;26000;102070897.35;82649189.76;80686843.86
+2015;Fundação Universidade do Maranhão;26272;Ministério da Educação;26000;831358697.87;788074395.85;758629277.05
+2015;Universidade Federal da Paraíba;26240;Ministério da Educação;26000;1512257507.59;1450182409.76;1441903613.91
+2015;Universidade Federal de Campina Grande;26252;Ministério da Educação;26000;654243503.93;628661797.67;621198599.52
+2015;Universidade Federal de Pernambuco;26242;Ministério da Educação;26000;1582203537.43;1511446726.25;1496621373.17
+2015;Universidade Federal Rural de Pernambuco;26248;Ministério da Educação;26000;529881608.1;509086504.45;501232397.92
+2015;Fundação Universidade Federal do Vale do São Francisco;26230;Ministério da Educação;26000;209348199.0;177640938.82;174513826.26
+2015;Fundação Universidade Federal do Piauí;26279;Ministério da Educação;26000;700588210.84;655808532.5;639295508.06
+2015;Universidade Federal do Rio Grande do Norte;26243;Ministério da Educação;26000;1531110582.22;1461068218.01;1436872999.5
+2015;Universidade Federal Rural do Semi-Árido;26264;Ministério da Educação;26000;229288975.35;209729383.5;207864183.54
+2015;Fundação Universidade Federal de Sergipe;26281;Ministério da Educação;26000;617773191.21;594779675.85;583009154.27
+2015;Instituto Federal de Educação, Ciência e Tecnologia de Alagoas;26402;Ministério da Educação;26000;320468785.44;298072613.55;285874203.42
+2015;Instituto Federal de Educação, Ciência e Tecnologia da Bahia;26427;Ministério da Educação;26000;456206331.85;417538550.85;406579828.76
+2015;Instituto Federal de Educação, Ciência e Tecnologia Baiano;26404;Ministério da Educação;26000;223669151.05;198906682.44;189297550.96
+2015;Instituto Federal de Educação, Ciência e Tecnologia do Ceará;26405;Ministério da Educação;26000;489281598.28;450411487.0;442432254.32
+2015;Instituto Federal de Educação, Ciência e Tecnologia do Maranhão;26408;Ministério da Educação;26000;429378550.38;397167809.54;382757202.58
+2015;Instituto Federal de Educação, Ciência e Tecnologia da Paraíba;26417;Ministério da Educação;26000;412825402.57;380641070.7;375062670.14
+2015;Instituto Federal de Educação, Ciência e Tecnologia de Pernambuco;26418;Ministério da Educação;26000;429281417.55;397450744.76;386110711.54
+2015;Instituto Federal de Educação, Ciência e Tecnologia do Sertão de Pernambuco;26430;Ministério da Educação;26000;134962019.2;123365054.47;119493190.54
+2015;Instituto Federal de Educação, Ciência e Tecnologia do Piauí;26431;Ministério da Educação;26000;304571237.33;283181654.47;273694735.69
+2015;Instituto Federal de Educação, Ciência e Tecnologia do Rio Grande do Norte;26435;Ministério da Educação;26000;471538732.85;428595015.95;421515426.27
+2015;Instituto Federal de Educação, Ciência e Tecnologia de Sergipe;26423;Ministério da Educação;26000;222523998.47;195260561.73;185053699.98
+2016;Universidade Federal de Alagoas;26231;Ministério da Educação;26000;865411268.15;836357830.46;833393050.7
+2016;Universidade Federal da Bahia;26232;Ministério da Educação;26000;1709151955.31;1646576111.22;1638092483.98
+2016;Universidade Federal do Oeste da Bahia;26447;Ministério da Educação;26000;80494700.19;72474451.85;72321247.07
+2016;Universidade Federal do Recôncavo da Bahia;26351;Ministério da Educação;26000;257030628.48;240377338.91;238793921.05
+2016;Universidade Federal do Sul da Bahia;26450;Ministério da Educação;26000;81320188.53;70193475.21;69781824.69
+2016;Universidade Federal do Ceará;26233;Ministério da Educação;26000;1628898455.85;1542011792.47;1535090814.35
+2016;Universidade Federal do Cariri;26449;Ministério da Educação;26000;88170341.8;75516691.99;75468497.94
+2016;Universidade da Integração Internacional da Lusofonia Afro-Brasileira;26442;Ministério da Educação;26000;111619033.14;105898006.29;105478647.29
+2016;Fundação Universidade do Maranhão;26272;Ministério da Educação;26000;888916247.44;833198952.25;816732606.75
+2016;Universidade Federal da Paraíba;26240;Ministério da Educação;26000;1594269732.04;1541922198.21;1541109519.72
+2016;Universidade Federal de Campina Grande;26252;Ministério da Educação;26000;717204337.77;681901672.12;680248100.15
+2016;Universidade Federal de Pernambuco;26242;Ministério da Educação;26000;1703639160.66;1609662100.59;1601762215.47
+2016;Universidade Federal Rural de Pernambuco;26248;Ministério da Educação;26000;635844199.38;576578560.19;574915409.69
+2016;Fundação Universidade Federal do Vale do São Francisco;26230;Ministério da Educação;26000;243108431.26;190099198.42;188667980.36
+2016;Fundação Universidade Federal do Piauí;26279;Ministério da Educação;26000;784246679.36;724060138.02;720785682.56
+2016;Universidade Federal do Rio Grande do Norte;26243;Ministério da Educação;26000;1647046513.93;1544567678.96;1538796767.64
+2016;Universidade Federal Rural do Semi-Árido;26264;Ministério da Educação;26000;266637845.88;232070809.18;231322506.01
+2016;Fundação Universidade Federal de Sergipe;26281;Ministério da Educação;26000;701977746.94;640769350.6;633317671.68
+2016;Instituto Federal de Educação, Ciência e Tecnologia de Alagoas;26402;Ministério da Educação;26000;356519472.46;324080723.55;322069050.99
+2016;Instituto Federal de Educação, Ciência e Tecnologia da Bahia;26427;Ministério da Educação;26000;502517662.2;457255748.45;454864232.61
+2016;Instituto Federal de Educação, Ciência e Tecnologia Baiano;26404;Ministério da Educação;26000;247199876.63;219459198.86;218250051.11
+2016;Instituto Federal de Educação, Ciência e Tecnologia do Ceará;26405;Ministério da Educação;26000;553669015.49;518088408.85;515139544.58
+2016;Instituto Federal de Educação, Ciência e Tecnologia do Maranhão;26408;Ministério da Educação;26000;502627112.84;472563672.89;470400639.09
+2016;Instituto Federal de Educação, Ciência e Tecnologia da Paraíba;26417;Ministério da Educação;26000;451125213.04;425677522.82;422389987.57
+2016;Instituto Federal de Educação, Ciência e Tecnologia de Pernambuco;26418;Ministério da Educação;26000;482389208.66;430131222.13;428140500.11
+2016;Instituto Federal de Educação, Ciência e Tecnologia do Sertão de Pernambuco;26430;Ministério da Educação;26000;158623161.68;142498126.08;141240837.36
+2016;Instituto Federal de Educação, Ciência e Tecnologia do Piauí;26431;Ministério da Educação;26000;354648565.49;334115943.78;330284495.27
+2016;Instituto Federal de Educação, Ciência e Tecnologia do Rio Grande do Norte;26435;Ministério da Educação;26000;529664951.57;486292100.63;482932854.92
+2016;Instituto Federal de Educação, Ciência e Tecnologia de Sergipe;26423;Ministério da Educação;26000;243743670.61;213159409.8;211627726.88
+2017;Universidade Federal de Alagoas;26231;Ministério da Educação;26000;967279215.1;928336881.81;922277493.53
+2017;Universidade Federal da Bahia;26232;Ministério da Educação;26000;1897432893.51;1818934086.47;1810298568.29
+2017;Universidade Federal do Oeste da Bahia;26447;Ministério da Educação;26000;98312244.05;91543352.36;90937049.86
+2017;Universidade Federal do Recôncavo da Bahia;26351;Ministério da Educação;26000;279158227.27;263280990.51;262299468.7
+2017;Universidade Federal do Sul da Bahia;26450;Ministério da Educação;26000;85764593.52;71109005.26;70106081.81
+2017;Universidade Federal do Ceará;26233;Ministério da Educação;26000;1710080556.55;1633180850.37;1624285779.2
+2017;Universidade Federal do Cariri;26449;Ministério da Educação;26000;103480172.65;92366233.35;92364633.35
+2017;Universidade da Integração Internacional da Lusofonia Afro-Brasileira;26442;Ministério da Educação;26000;133496848.25;125733307.17;125656761.17
+2017;Fundação Universidade do Maranhão;26272;Ministério da Educação;26000;874679288.19;835717600.61;832397705.89
+2017;Universidade Federal da Paraíba;26240;Ministério da Educação;26000;1763069755.67;1716941444.99;1714190287.61
+2017;Universidade Federal de Campina Grande;26252;Ministério da Educação;26000;783390401.08;745167752.86;743425536.87
+2017;Universidade Federal de Pernambuco;26242;Ministério da Educação;26000;1874140732.28;1753117767.8;1733125919.67
+2017;Universidade Federal Rural de Pernambuco;26248;Ministério da Educação;26000;771224309.44;646045490.29;644585155.06
+2017;Fundação Universidade Federal do Vale do São Francisco;26230;Ministério da Educação;26000;233398323.48;194277010.79;192418522.3
+2017;Fundação Universidade Federal do Piauí;26279;Ministério da Educação;26000;828934638.18;788736561.87;784838888.2
+2017;Universidade Federal do Rio Grande do Norte;26243;Ministério da Educação;26000;1966373815.41;1710686478.91;1706075089.57
+2017;Universidade Federal Rural do Semi-Árido;26264;Ministério da Educação;26000;278939479.92;262708973.57;261968349.73
+2017;Fundação Universidade Federal de Sergipe;26281;Ministério da Educação;26000;759505092.13;707308401.25;699998580.7
+2017;Instituto Federal de Educação, Ciência e Tecnologia de Alagoas;26402;Ministério da Educação;26000;382779057.37;365564974.32;360704194.65
+2017;Instituto Federal de Educação, Ciência e Tecnologia da Bahia;26427;Ministério da Educação;26000;544885669.03;504943321.32;503654320.28
+2017;Instituto Federal de Educação, Ciência e Tecnologia Baiano;26404;Ministério da Educação;26000;293632188.56;269194368.05;268388484.87
+2017;Instituto Federal de Educação, Ciência e Tecnologia do Ceará;26405;Ministério da Educação;26000;629336526.99;591996226.26;589759133.89
+2017;Instituto Federal de Educação, Ciência e Tecnologia do Maranhão;26408;Ministério da Educação;26000;580406393.87;544855271.08;541883796.19
+2017;Instituto Federal de Educação, Ciência e Tecnologia da Paraíba;26417;Ministério da Educação;26000;514289816.48;480226030.53;478114145.15
+2017;Instituto Federal de Educação, Ciência e Tecnologia de Pernambuco;26418;Ministério da Educação;26000;557061382.42;478092648.74;476006252.14
+2017;Instituto Federal de Educação, Ciência e Tecnologia do Sertão de Pernambuco;26430;Ministério da Educação;26000;193001431.62;162131757.09;160547017.31
+2017;Instituto Federal de Educação, Ciência e Tecnologia do Piauí;26431;Ministério da Educação;26000;390171817.3;372901937.04;371490883.15
+2017;Instituto Federal de Educação, Ciência e Tecnologia do Rio Grande do Norte;26435;Ministério da Educação;26000;587043250.7;529816442.24;523729502.61
+2017;Instituto Federal de Educação, Ciência e Tecnologia de Sergipe;26423;Ministério da Educação;26000;264868189.04;239610131.04;236726817.25
+2018;Universidade Federal de Alagoas;26231;Ministério da Educação;26000;1021096374.93;977927116.49;912333588.01
+2018;Universidade Federal da Bahia;26232;Ministério da Educação;26000;1946483944.85;1883924356.9;1762352297.26
+2018;Universidade Federal do Oeste da Bahia;26447;Ministério da Educação;26000;112550784.1;103324771.12;98599774.78
+2018;Universidade Federal do Recôncavo da Bahia;26351;Ministério da Educação;26000;299267208.49;281772143.48;260862006.48
+2018;Universidade Federal do Sul da Bahia;26450;Ministério da Educação;26000;111218053.11;107028128.23;101726011.7
+2018;Universidade Federal do Ceará;26233;Ministério da Educação;26000;1757400491.85;1678274475.71;1561061621.68
+2018;Universidade Federal do Cariri;26449;Ministério da Educação;26000;117793226.61;102072662.88;96356872.44
+2018;Universidade da Integração Internacional da Lusofonia Afro-Brasileira;26442;Ministério da Educação;26000;142642158.44;134530500.76;128543119.83
+2018;Fundação Universidade do Maranhão;26272;Ministério da Educação;26000;883923472.28;862483110.98;803091378.63
+2018;Universidade Federal da Paraíba;26240;Ministério da Educação;26000;1839599030.63;1786888724.88;1644951036.25
+2018;Universidade Federal de Campina Grande;26252;Ministério da Educação;26000;807469555.49;749514960.15;690884847.13
+2018;Universidade Federal de Pernambuco;26242;Ministério da Educação;26000;1867017473.16;1806649522.75;1684544069.95
+2018;Universidade Federal Rural de Pernambuco;26248;Ministério da Educação;26000;664490426.18;631424179.68;590705800.17
+2018;Fundação Universidade Federal do Vale do São Francisco;26230;Ministério da Educação;26000;224662792.75;201822441.36;191219963.9
+2018;Fundação Universidade Federal do Piauí;26279;Ministério da Educação;26000;840744377.42;809293490.56;751216827.51
+2018;Universidade Federal do Rio Grande do Norte;26243;Ministério da Educação;26000;1875108978.8;1716398298.36;1595071654.65
+2018;Universidade Federal Rural do Semi-Árido;26264;Ministério da Educação;26000;295645455.15;274507479.96;254360228.77
+2018;Fundação Universidade Federal de Sergipe;26281;Ministério da Educação;26000;807137293.78;754001701.98;700364282.82
+2018;Instituto Federal de Educação, Ciência e Tecnologia de Alagoas;26402;Ministério da Educação;26000;425316558.16;400153571.5;370038008.77
+2018;Instituto Federal de Educação, Ciência e Tecnologia da Bahia;26427;Ministério da Educação;26000;595998657.85;545781995.84;501048799.49
+2018;Instituto Federal de Educação, Ciência e Tecnologia Baiano;26404;Ministério da Educação;26000;318174295.32;300834481.66;280594754.7
+2018;Instituto Federal de Educação, Ciência e Tecnologia do Ceará;26405;Ministério da Educação;26000;711688275.56;664879779.66;615281626.19
+2018;Instituto Federal de Educação, Ciência e Tecnologia do Maranhão;26408;Ministério da Educação;26000;616636180.67;580190731.58;539671152.69
+2018;Instituto Federal de Educação, Ciência e Tecnologia da Paraíba;26417;Ministério da Educação;26000;551632316.92;512425516.57;471515482.36
+2018;Instituto Federal de Educação, Ciência e Tecnologia de Pernambuco;26418;Ministério da Educação;26000;595348137.95;524925805.79;482218053.18
+2018;Instituto Federal de Educação, Ciência e Tecnologia do Sertão de Pernambuco;26430;Ministério da Educação;26000;187004551.96;177503871.84;162697454.83
+2018;Instituto Federal de Educação, Ciência e Tecnologia do Piauí;26431;Ministério da Educação;26000;446043038.16;427439961.56;396987935.47
+2018;Instituto Federal de Educação, Ciência e Tecnologia do Rio Grande do Norte;26435;Ministério da Educação;26000;638851901.84;578101384.49;529476028.78
+2018;Instituto Federal de Educação, Ciência e Tecnologia de Sergipe;26423;Ministério da Educação;26000;269898213.38;255968092.98;236208879.34
+2019;Universidade Federal de Alagoas;26231;Ministério da Educação;26000;1016511638.33;995449054.74;931114963.79
+2019;Universidade Federal da Bahia;26232;Ministério da Educação;26000;2055958382.37;1999160761.52;1874445303.68
+2019;Universidade Federal do Oeste da Bahia;26447;Ministério da Educação;26000;114305030.82;108787575.17;102267875.39
+2019;Universidade Federal do Recôncavo da Bahia;26351;Ministério da Educação;26000;318307098.3;298547864.07;278020952.62
+2019;Universidade Federal do Sul da Bahia;26450;Ministério da Educação;26000;124455142.11;107516299.27;101729150.88
+2019;Universidade Federal do Ceará;26233;Ministério da Educação;26000;1763191868.03;1713830893.39;1610705131.6
+2019;Universidade Federal do Cariri;26449;Ministério da Educação;26000;118885258.76;111299269.5;104883893.6
+2019;Universidade da Integração Internacional da Lusofonia Afro-Brasileira;26442;Ministério da Educação;26000;150775039.44;139685299.52;133034426.18
+2019;Fundação Universidade do Maranhão;26272;Ministério da Educação;26000;920744035.34;901992366.56;845883270.05
+2019;Universidade Federal da Paraíba;26240;Ministério da Educação;26000;1886088082.12;1834748077.51;1691972822.83
+2019;Universidade Federal de Campina Grande;26252;Ministério da Educação;26000;836852626.51;759167014.95;700801500.15
+2019;Universidade Federal de Pernambuco;26242;Ministério da Educação;26000;1906461675.83;1846261315.5;1725471856.19
+2019;Universidade Federal Rural de Pernambuco;26248;Ministério da Educação;26000;683151181.18;656457284.32;611865570.71
+2019;Fundação Universidade Federal do Vale do São Francisco;26230;Ministério da Educação;26000;232417286.96;207299326.71;196185230.92
+2019;Fundação Universidade Federal do Piauí;26279;Ministério da Educação;26000;877195680.64;838097539.53;781527229.1
+2019;Universidade Federal do Rio Grande do Norte;26243;Ministério da Educação;26000;1918659629.59;1805836712.58;1656181601.05
+2019;Universidade Federal Rural do Semi-Árido;26264;Ministério da Educação;26000;308670602.68;283045167.87;264836287.35
+2019;Fundação Universidade Federal de Sergipe;26281;Ministério da Educação;26000;833980438.69;757815350.26;707389347.33
+2019;Instituto Federal de Educação, Ciência e Tecnologia de Alagoas;26402;Ministério da Educação;26000;463959154.36;417489645.05;386211521.63
+2019;Instituto Federal de Educação, Ciência e Tecnologia da Bahia;26427;Ministério da Educação;26000;634755799.73;602229904.84;560913183.13
+2019;Instituto Federal de Educação, Ciência e Tecnologia Baiano;26404;Ministério da Educação;26000;337134607.37;313182438.71;292599562.81
+2019;Instituto Federal de Educação, Ciência e Tecnologia do Ceará;26405;Ministério da Educação;26000;756313151.19;710456583.58;656299342.7
+2019;Instituto Federal de Educação, Ciência e Tecnologia do Maranhão;26408;Ministério da Educação;26000;672015032.3;641017747.28;594931992.62
+2019;Instituto Federal de Educação, Ciência e Tecnologia da Paraíba;26417;Ministério da Educação;26000;577193621.36;543680255.47;501642765.5
+2019;Instituto Federal de Educação, Ciência e Tecnologia de Pernambuco;26418;Ministério da Educação;26000;579972335.99;549547815.95;505103739.25
+2019;Instituto Federal de Educação, Ciência e Tecnologia do Sertão de Pernambuco;26430;Ministério da Educação;26000;194317236.18;181394679.26;166925265.93
+2019;Instituto Federal de Educação, Ciência e Tecnologia do Piauí;26431;Ministério da Educação;26000;458463251.22;439627852.16;406787501.38
+2019;Instituto Federal de Educação, Ciência e Tecnologia do Rio Grande do Norte;26435;Ministério da Educação;26000;654909285.68;594311232.34;546908774.94
+2019;Instituto Federal de Educação, Ciência e Tecnologia de Sergipe;26423;Ministério da Educação;26000;278412476.76;266639436.75;246201396.49
+2020;Universidade Federal de Alagoas;26231;Ministério da Educação;26000;1003694900.82;979046681.81;917200044.23
+2020;Universidade Federal da Bahia;26232;Ministério da Educação;26000;1968764533.96;1925267736.53;1807777358.71
+2020;Universidade Federal do Oeste da Bahia;26447;Ministério da Educação;26000;119893893.17;108428555.46;102705984.52
+2020;Universidade Federal do Recôncavo da Bahia;26351;Ministério da Educação;26000;325874440.03;297482427.11;277095447.57
+2020;Universidade Federal do Sul da Bahia;26450;Ministério da Educação;26000;117879959.94;102507819.27;96819941.96
+2020;Universidade Federal do Ceará;26233;Ministério da Educação;26000;1730049843.14;1658889077.61;1560696160.27
+2020;Universidade Federal do Cariri;26449;Ministério da Educação;26000;126054484.79;113586022.94;107003357.43
+2020;Universidade da Integração Internacional da Lusofonia Afro-Brasileira;26442;Ministério da Educação;26000;152571843.64;139736117.5;130699977.83
+2020;Fundação Universidade do Maranhão;26272;Ministério da Educação;26000;936243941.39;905242708.81;844217117.8
+2020;Universidade Federal da Paraíba;26240;Ministério da Educação;26000;1969751966.93;1901972200.12;1757876172.8
+2020;Universidade Federal de Campina Grande;26252;Ministério da Educação;26000;795427981.09;746475383.68;688871127.55
+2020;Universidade Federal de Pernambuco;26242;Ministério da Educação;26000;1895154922.1;1813526870.83;1697701927.12
+2020;Universidade Federal Rural de Pernambuco;26248;Ministério da Educação;26000;670909548.58;635667292.99;595557351.05
+2020;Universidade Federal do Agreste de Pernambuco;26456;Ministério da Educação;26000;37320498.72;34900999.55;31067521.96
+2020;Fundação Universidade Federal do Vale do São Francisco;26230;Ministério da Educação;26000;245125381.09;217471673.31;205292797.33
+2020;Fundação Universidade Federal do Piauí;26279;Ministério da Educação;26000;851977782.52;811562323.21;759227701.05
+2020;Universidade Federal do Delta do Parnaíba;26455;Ministério da Educação;26000;36228590.05;32230411.93;27944041.9
+2020;Universidade Federal do Rio Grande do Norte;26243;Ministério da Educação;26000;1944171174.22;1787973902.71;1667037227.28
+2020;Universidade Federal Rural do Semi-Árido;26264;Ministério da Educação;26000;313274160.31;281032119.62;262944888.58
+2020;Fundação Universidade Federal de Sergipe;26281;Ministério da Educação;26000;833811298.98;790013706.14;738099918.44
+2020;Instituto Federal de Educação, Ciência e Tecnologia de Alagoas;26402;Ministério da Educação;26000;460188098.4;427975456.29;395482345.24
+2020;Instituto Federal de Educação, Ciência e Tecnologia da Bahia;26427;Ministério da Educação;26000;623915118.64;592351267.49;550882237.5
+2020;Instituto Federal de Educação, Ciência e Tecnologia Baiano;26404;Ministério da Educação;26000;349007696.18;316596863.52;295471510.25
+2020;Instituto Federal de Educação, Ciência e Tecnologia do Ceará;26405;Ministério da Educação;26000;817540012.54;750421847.85;689517398.32
+2020;Instituto Federal de Educação, Ciência e Tecnologia do Maranhão;26408;Ministério da Educação;26000;656549891.89;622906366.0;579262890.39
+2020;Instituto Federal de Educação, Ciência e Tecnologia da Paraíba;26417;Ministério da Educação;26000;601483829.09;563139916.6;521076945.93
+2020;Instituto Federal de Educação, Ciência e Tecnologia de Pernambuco;26418;Ministério da Educação;26000;583528245.67;554798259.57;512485781.77
+2020;Instituto Federal de Educação, Ciência e Tecnologia do Sertão de Pernambuco;26430;Ministério da Educação;26000;197587727.86;187002605.75;171570333.34
+2020;Instituto Federal de Educação, Ciência e Tecnologia do Piauí;26431;Ministério da Educação;26000;479710600.49;453277522.48;420936851.07
+2020;Instituto Federal de Educação, Ciência e Tecnologia do Rio Grande do Norte;26435;Ministério da Educação;26000;678724486.2;604752532.06;557174218.2
+2020;Instituto Federal de Educação, Ciência e Tecnologia de Sergipe;26423;Ministério da Educação;26000;292528985.81;279991615.71;260107361.71
+2021;Universidade Federal de Alagoas;26231;Ministério da Educação;26000;1034545458.08;1007301352.53;943836959.76
+2021;Universidade Federal da Bahia;26232;Ministério da Educação;26000;1976394942.9;1934287964.44;1816728784.77
+2021;Universidade Federal do Oeste da Bahia;26447;Ministério da Educação;26000;117030963.2;107880210.36;100810086.77
+2021;Universidade Federal do Recôncavo da Bahia;26351;Ministério da Educação;26000;321575842.79;301952720.32;280918364.71
+2021;Universidade Federal do Sul da Bahia;26450;Ministério da Educação;26000;115042884.91;108243187.59;102298174.89
+2021;Universidade Federal do Ceará;26233;Ministério da Educação;26000;1700548912.62;1671897824.4;1571152887.47
+2021;Universidade Federal do Cariri;26449;Ministério da Educação;26000;123636728.85;115995905.71;109117317.89
+2021;Universidade da Integração Internacional da Lusofonia Afro-Brasileira;26442;Ministério da Educação;26000;157673629.0;150797134.37;141445230.78
+2021;Fundação Universidade do Maranhão;26272;Ministério da Educação;26000;951571177.03;903257848.02;847222290.5
+2021;Universidade Federal da Paraíba;26240;Ministério da Educação;26000;1962351790.77;1917716926.07;1772597344.61
+2021;Universidade Federal de Campina Grande;26252;Ministério da Educação;26000;803896847.0;770124788.98;708546895.17
+2021;Universidade Federal de Pernambuco;26242;Ministério da Educação;26000;1899962127.28;1816842902.97;1692040398.32
+2021;Universidade Federal Rural de Pernambuco;26248;Ministério da Educação;26000;642952852.18;621381418.92;579175867.68
+2021;Universidade Federal do Agreste de Pernambuco;26456;Ministério da Educação;26000;58607981.43;56121659.52;51654757.41
+2021;Fundação Universidade Federal do Vale do São Francisco;26230;Ministério da Educação;26000;234903533.88;215010316.62;202452298.09
+2021;Fundação Universidade Federal do Piauí;26279;Ministério da Educação;26000;833790038.92;797998225.66;727926847.11
+2021;Universidade Federal do Delta do Parnaíba;26455;Ministério da Educação;26000;64788054.69;61248890.92;56384758.53
+2021;Universidade Federal do Rio Grande do Norte;26243;Ministério da Educação;26000;1900063681.47;1814907756.6;1694926308.59
+2021;Universidade Federal Rural do Semi-Árido;26264;Ministério da Educação;26000;301331811.2;282846960.78;262375457.07
+2021;Fundação Universidade Federal de Sergipe;26281;Ministério da Educação;26000;837490703.04;811091389.66;757603527.77
+2021;Instituto Federal de Educação, Ciência e Tecnologia de Alagoas;26402;Ministério da Educação;26000;458394228.24;434139002.3;400174794.41
+2021;Instituto Federal de Educação, Ciência e Tecnologia da Bahia;26427;Ministério da Educação;26000;627991026.32;603820528.63;557789213.13
+2021;Instituto Federal de Educação, Ciência e Tecnologia Baiano;26404;Ministério da Educação;26000;353103286.83;324916388.27;299970395.31
+2021;Instituto Federal de Educação, Ciência e Tecnologia do Ceará;26405;Ministério da Educação;26000;811250248.25;777000839.0;714257688.3
+2021;Instituto Federal de Educação, Ciência e Tecnologia do Maranhão;26408;Ministério da Educação;26000;684351095.85;640801789.83;582828706.34
+2021;Instituto Federal de Educação, Ciência e Tecnologia da Paraíba;26417;Ministério da Educação;26000;606292850.52;572715020.54;528336347.94
+2021;Instituto Federal de Educação, Ciência e Tecnologia de Pernambuco;26418;Ministério da Educação;26000;596429218.36;574674421.45;530389282.95
+2021;Instituto Federal de Educação, Ciência e Tecnologia do Sertão de Pernambuco;26430;Ministério da Educação;26000;201859686.25;190317802.34;174829586.67
+2021;Instituto Federal de Educação, Ciência e Tecnologia do Piauí;26431;Ministério da Educação;26000;500960230.19;485462045.09;439390205.31
+2021;Instituto Federal de Educação, Ciência e Tecnologia do Rio Grande do Norte;26435;Ministério da Educação;26000;679766696.8;617854394.85;561140578.49
+2021;Instituto Federal de Educação, Ciência e Tecnologia de Sergipe;26423;Ministério da Educação;26000;290515616.98;283772670.66;262347202.21
+2022;Universidade Federal de Alagoas;26231;Ministério da Educação;26000;1079233871.34;1039193227.16;971937494.67
+2022;Universidade Federal da Bahia;26232;Ministério da Educação;26000;2007885471.13;1976877690.51;1858704044.85
+2022;Universidade Federal do Oeste da Bahia;26447;Ministério da Educação;26000;124889243.66;116267214.63;108744690.57
+2022;Universidade Federal do Recôncavo da Bahia;26351;Ministério da Educação;26000;347434235.22;328907560.04;306685479.94
+2022;Universidade Federal do Sul da Bahia;26450;Ministério da Educação;26000;126097645.32;123209364.33;116921290.84
+2022;Universidade Federal do Ceará;26233;Ministério da Educação;26000;1739104575.66;1710350091.81;1603431555.85
+2022;Universidade Federal do Cariri;26449;Ministério da Educação;26000;139699018.12;128323919.94;120490956.02
+2022;Universidade da Integração Internacional da Lusofonia Afro-Brasileira;26442;Ministério da Educação;26000;178636223.54;163675643.34;154279879.18
+2022;Fundação Universidade do Maranhão;26272;Ministério da Educação;26000;974933775.09;953408267.37;890767098.94
+2022;Universidade Federal da Paraíba;26240;Ministério da Educação;26000;1996920415.14;1940038710.72;1792676067.06
+2022;Universidade Federal de Campina Grande;26252;Ministério da Educação;26000;823965407.81;798368492.59;738441179.1
+2022;Universidade Federal de Pernambuco;26242;Ministério da Educação;26000;1914744301.96;1852272295.06;1730033783.42
+2022;Universidade Federal Rural de Pernambuco;26248;Ministério da Educação;26000;657710901.6;643837699.89;599625790.36
+2022;Universidade Federal do Agreste de Pernambuco;26456;Ministério da Educação;26000;63009502.46;60326875.47;55909666.27
+2022;Fundação Universidade Federal do Vale do São Francisco;26230;Ministério da Educação;26000;275383269.63;244697842.35;231175690.76
+2022;Fundação Universidade Federal do Piauí;26279;Ministério da Educação;26000;874910234.58;830954299.83;777174018.13
+2022;Universidade Federal do Delta do Parnaíba;26455;Ministério da Educação;26000;79896315.98;73771133.69;68513147.17
+2022;Universidade Federal do Rio Grande do Norte;26243;Ministério da Educação;26000;1933124121.42;1886854343.76;1759408341.4
+2022;Universidade Federal Rural do Semi-Árido;26264;Ministério da Educação;26000;318241970.22;305866310.5;285448742.93
+2022;Fundação Universidade Federal de Sergipe;26281;Ministério da Educação;26000;868804000.38;836286786.13;782601941.42
+2022;Instituto Federal de Educação, Ciência e Tecnologia de Alagoas;26402;Ministério da Educação;26000;465654387.88;424696206.33;394611736.63
+2022;Instituto Federal de Educação, Ciência e Tecnologia da Bahia;26427;Ministério da Educação;26000;672012155.42;649737074.64;601515550.56
+2022;Instituto Federal de Educação, Ciência e Tecnologia Baiano;26404;Ministério da Educação;26000;374777897.34;349871755.55;324847151.51
+2022;Instituto Federal de Educação, Ciência e Tecnologia do Ceará;26405;Ministério da Educação;26000;859071465.27;828383761.64;766662073.4
+2022;Instituto Federal de Educação, Ciência e Tecnologia do Maranhão;26408;Ministério da Educação;26000;725917514.32;679472745.61;627421763.63
+2022;Instituto Federal de Educação, Ciência e Tecnologia da Paraíba;26417;Ministério da Educação;26000;636278543.05;603858298.33;557773550.72
+2022;Instituto Federal de Educação, Ciência e Tecnologia de Pernambuco;26418;Ministério da Educação;26000;623270214.88;603502908.05;557760992.62
+2022;Instituto Federal de Educação, Ciência e Tecnologia do Sertão de Pernambuco;26430;Ministério da Educação;26000;217035353.82;206144656.17;189852830.29
+2022;Instituto Federal de Educação, Ciência e Tecnologia do Piauí;26431;Ministério da Educação;26000;521355985.55;505369716.43;465525209.54
+2022;Instituto Federal de Educação, Ciência e Tecnologia do Rio Grande do Norte;26435;Ministério da Educação;26000;719515349.67;657416332.14;601759657.31
+2022;Instituto Federal de Educação, Ciência e Tecnologia de Sergipe;26423;Ministério da Educação;26000;306031373.82;292105610.63;270552763.68
+2023;Universidade Federal de Alagoas;26231;Ministério da Educação;26000;1155068741.16;1123324052.66;1027272788.75
+2023;Universidade Federal da Bahia;26232;Ministério da Educação;26000;2263725471.55;2205693774.3;2022478340.83
+2023;Universidade Federal do Oeste da Bahia;26447;Ministério da Educação;26000;144617121.3;134165164.09;118505719.91
+2023;Universidade Federal do Recôncavo da Bahia;26351;Ministério da Educação;26000;422266975.26;401738845.32;360880736.78
+2023;Universidade Federal do Sul da Bahia;26450;Ministério da Educação;26000;146780995.01;134089208.38;121161927.47
+2023;Universidade Federal do Ceará;26233;Ministério da Educação;26000;1938390814.2;1852171809.96;1681618214.94
+2023;Universidade Federal do Cariri;26449;Ministério da Educação;26000;157995522.17;148653025.03;135768263.16
+2023;Universidade da Integração Internacional da Lusofonia Afro-Brasileira;26442;Ministério da Educação;26000;189400249.07;177132693.75;160739413.75
+2023;Fundação Universidade do Maranhão;26272;Ministério da Educação;26000;1102923419.12;1068906490.28;991323621.64
+2023;Universidade Federal da Paraíba;26240;Ministério da Educação;26000;2159551467.48;2088916181.99;1872130959.87
+2023;Universidade Federal de Campina Grande;26252;Ministério da Educação;26000;910868122.35;887552962.01;790558547.69
+2023;Universidade Federal de Pernambuco;26242;Ministério da Educação;26000;2128331619.38;2032057855.22;1844361080.32
+2023;Universidade Federal Rural de Pernambuco;26248;Ministério da Educação;26000;762455916.88;723987833.09;651361558.65
+2023;Universidade Federal do Agreste de Pernambuco;26456;Ministério da Educação;26000;67918974.46;64782013.57;57375435.13
+2023;Fundação Universidade Federal do Vale do São Francisco;26230;Ministério da Educação;26000;299910863.04;278353555.8;251661978.47
+2023;Fundação Universidade Federal do Piauí;26279;Ministério da Educação;26000;955296449.28;911204516.16;831722344.26
+2023;Universidade Federal do Delta do Parnaíba;26455;Ministério da Educação;26000;93167730.49;87935681.49;78268074.5
+2023;Universidade Federal do Rio Grande do Norte;26243;Ministério da Educação;26000;2154052044.8;2104567781.83;1902788187.13
+2023;Universidade Federal Rural do Semi-Árido;26264;Ministério da Educação;26000;365377535.79;361977605.67;328225215.72
+2023;Fundação Universidade Federal de Sergipe;26281;Ministério da Educação;26000;978222332.93;936865936.53;866305246.32
+2023;Instituto Federal de Educação, Ciência e Tecnologia de Alagoas;26402;Ministério da Educação;26000;473067882.86;441828799.68;401912102.52
+2023;Instituto Federal de Educação, Ciência e Tecnologia da Bahia;26427;Ministério da Educação;26000;777640449.2;728227348.08;664371047.33
+2023;Instituto Federal de Educação, Ciência e Tecnologia Baiano;26404;Ministério da Educação;26000;434254594.68;400120471.68;367783326.19
+2023;Instituto Federal de Educação, Ciência e Tecnologia do Ceará;26405;Ministério da Educação;26000;1024389243.08;946454046.04;850791772.72
+2023;Instituto Federal de Educação, Ciência e Tecnologia do Maranhão;26408;Ministério da Educação;26000;906223957.19;816236681.35;729411488.0
+2023;Instituto Federal de Educação, Ciência e Tecnologia da Paraíba;26417;Ministério da Educação;26000;709914518.26;678522630.24;604048503.88
+2023;Instituto Federal de Educação, Ciência e Tecnologia de Pernambuco;26418;Ministério da Educação;26000;699532862.21;661707966.03;603351644.45
+2023;Instituto Federal de Educação, Ciência e Tecnologia do Sertão de Pernambuco;26430;Ministério da Educação;26000;250858769.65;233438645.18;212091187.57
+2023;Instituto Federal de Educação, Ciência e Tecnologia do Piauí;26431;Ministério da Educação;26000;613884894.55;583746148.09;523326960.04
+2023;Instituto Federal de Educação, Ciência e Tecnologia do Rio Grande do Norte;26435;Ministério da Educação;26000;825243301.68;743796587.3;662730901.62
+2023;Instituto Federal de Educação, Ciência e Tecnologia de Sergipe;26423;Ministério da Educação;26000;343389416.74;325323057.69;292428599.68
+2024;Universidade Federal de Alagoas;26231;Ministério da Educação;26000;1237324301.73;1185115616.22;1073287511.74
+2024;Universidade Federal da Bahia;26232;Ministério da Educação;26000;2347845955.23;2296782766.32;2137137051.59
+2024;Universidade Federal do Oeste da Bahia;26447;Ministério da Educação;26000;150739722.73;143729324.54;131752534.67
+2024;Universidade Federal do Recôncavo da Bahia;26351;Ministério da Educação;26000;441771782.94;424531675.44;387137757.29
+2024;Universidade Federal do Sul da Bahia;26450;Ministério da Educação;26000;161387692.89;156467083.38;141891010.22
+2024;Universidade Federal do Ceará;26233;Ministério da Educação;26000;1970450564.34;1936073769.45;1769534048.32
+2024;Universidade Federal do Cariri;26449;Ministério da Educação;26000;165560142.32;159234567.62;146529984.92
+2024;Universidade da Integração Internacional da Lusofonia Afro-Brasileira;26442;Ministério da Educação;26000;211922206.16;198837043.56;181814368.03
+2024;Fundação Universidade do Maranhão;26272;Ministério da Educação;26000;1197764354.3;1144700496.62;1066063072.58
+2024;Universidade Federal da Paraíba;26240;Ministério da Educação;26000;2290486677.32;2216550406.67;1992685879.43
+2024;Universidade Federal de Campina Grande;26252;Ministério da Educação;26000;942300049.35;925635643.39;829877004.88
+2024;Universidade Federal de Pernambuco;26242;Ministério da Educação;26000;2324025559.3;2207923704.29;1966177074.11
+2024;Universidade Federal Rural de Pernambuco;26248;Ministério da Educação;26000;784086352.51;760032491.62;687934784.02
+2024;Universidade Federal do Agreste de Pernambuco;26456;Ministério da Educação;26000;83371605.92;81235840.34;72875115.53
+2024;Fundação Universidade Federal do Vale do São Francisco;26230;Ministério da Educação;26000;348213094.54;330090552.37;302923817.35
+2024;Fundação Universidade Federal do Piauí;26279;Ministério da Educação;26000;1010630894.6;971532197.88;883681810.02
+2024;Universidade Federal do Delta do Parnaíba;26455;Ministério da Educação;26000;107325623.56;102219672.34;92782388.97
+2024;Universidade Federal do Rio Grande do Norte;26243;Ministério da Educação;26000;2198436171.1;2126844274.23;1942294882.24
+2024;Universidade Federal Rural do Semi-Árido;26264;Ministério da Educação;26000;402442468.07;394738688.88;361788872.23
+2024;Fundação Universidade Federal de Sergipe;26281;Ministério da Educação;26000;1034728957.91;1009201293.44;936392143.83
+2024;Instituto Federal de Educação, Ciência e Tecnologia de Alagoas;26402;Ministério da Educação;26000;519348577.26;481900955.63;441117903.45
+2024;Instituto Federal de Educação, Ciência e Tecnologia da Bahia;26427;Ministério da Educação;26000;823530894.3;794191768.86;719731957.17
+2024;Instituto Federal de Educação, Ciência e Tecnologia Baiano;26404;Ministério da Educação;26000;473904408.28;425389087.69;391819061.7
+2024;Instituto Federal de Educação, Ciência e Tecnologia do Ceará;26405;Ministério da Educação;26000;1065689175.81;1014976572.83;906734773.15
+2024;Instituto Federal de Educação, Ciência e Tecnologia do Maranhão;26408;Ministério da Educação;26000;978243302.43;911226767.21;811826810.7
+2024;Instituto Federal de Educação, Ciência e Tecnologia da Paraíba;26417;Ministério da Educação;26000;771923908.31;727999560.46;651167557.1
+2024;Instituto Federal de Educação, Ciência e Tecnologia de Pernambuco;26418;Ministério da Educação;26000;723905135.89;693777132.27;635219350.88
+2024;Instituto Federal de Educação, Ciência e Tecnologia do Sertão de Pernambuco;26430;Ministério da Educação;26000;269238693.22;258730630.53;235575199.38
+2024;Instituto Federal de Educação, Ciência e Tecnologia do Piauí;26431;Ministério da Educação;26000;672421964.59;638358507.89;573475937.92
+2024;Instituto Federal de Educação, Ciência e Tecnologia do Rio Grande do Norte;26435;Ministério da Educação;26000;913718280.02;811421442.06;725161039.21
+2024;Instituto Federal de Educação, Ciência e Tecnologia de Sergipe;26423;Ministério da Educação;26000;359321828.95;345357522.83;311043587.6
+2025;Universidade Federal de Alagoas;26231;Ministério da Educação;26000;1423124059.59;1374452513.79;1241015918.37
+2025;Universidade Federal da Bahia;26232;Ministério da Educação;26000;2706510716.72;2657917302.4;2457221238.69
+2025;Universidade Federal do Oeste da Bahia;26447;Ministério da Educação;26000;176032150.18;169827145.48;155262319.17
+2025;Universidade Federal do Recôncavo da Bahia;26351;Ministério da Educação;26000;533332513.26;513135330.78;457979028.23
+2025;Universidade Federal do Sul da Bahia;26450;Ministério da Educação;26000;202229883.51;194227934.6;177594751.91
+2025;Universidade Federal do Ceará;26233;Ministério da Educação;26000;2357229644.12;2274575420.76;2053711366.33
+2025;Universidade Federal do Cariri;26449;Ministério da Educação;26000;199494591.61;190213659.35;172040517.81
+2025;Universidade da Integração Internacional da Lusofonia Afro-Brasileira;26442;Ministério da Educação;26000;235510719.63;230055863.87;208897369.03
+2025;Fundação Universidade do Maranhão;26272;Ministério da Educação;26000;1369933091.02;1316635295.05;1202294694.77
+2025;Universidade Federal da Paraíba;26240;Ministério da Educação;26000;2582397134.9;2511397378.62;2224986678.01
+2025;Universidade Federal de Campina Grande;26252;Ministério da Educação;26000;1098491067.4;1081192599.94;955484792.86
+2025;Universidade Federal de Pernambuco;26242;Ministério da Educação;26000;2561686473.46;2492903258.46;2238391681.77
+2025;Universidade Federal Rural de Pernambuco;26248;Ministério da Educação;26000;931345340.39;882766594.26;790634974.6
+2025;Universidade Federal do Agreste de Pernambuco;26456;Ministério da Educação;26000;107892113.28;100393685.96;88447822.3
+2025;Fundação Universidade Federal do Vale do São Francisco;26230;Ministério da Educação;26000;405885731.07;389017919.62;352500610.15
+2025;Fundação Universidade Federal do Piauí;26279;Ministério da Educação;26000;1183420516.59;1138317112.73;1017865187.65
+2025;Universidade Federal do Delta do Parnaíba;26455;Ministério da Educação;26000;154410932.08;124502808.69;110440482.66
+2025;Universidade Federal do Rio Grande do Norte;26243;Ministério da Educação;26000;2537299606.4;2450277140.62;2176818119.24
+2025;Universidade Federal Rural do Semi-Árido;26264;Ministério da Educação;26000;476333764.17;453893508.1;404843774.07
+2025;Fundação Universidade Federal de Sergipe;26281;Ministério da Educação;26000;1177441543.09;1158506009.13;1060044002.38
+2025;Instituto Federal de Educação, Ciência e Tecnologia de Alagoas;26402;Ministério da Educação;26000;599921285.95;569393544.41;512516780.17
+2025;Instituto Federal de Educação, Ciência e Tecnologia da Bahia;26427;Ministério da Educação;26000;946381990.69;914478202.18;821855848.35
+2025;Instituto Federal de Educação, Ciência e Tecnologia Baiano;26404;Ministério da Educação;26000;591051458.48;540042271.25;488422008.09
+2025;Instituto Federal de Educação, Ciência e Tecnologia do Ceará;26405;Ministério da Educação;26000;1241340221.48;1182254282.6;1045922028.61
+2025;Instituto Federal de Educação, Ciência e Tecnologia do Maranhão;26408;Ministério da Educação;26000;1185969622.33;1121245832.6;1009321217.98
+2025;Instituto Federal de Educação, Ciência e Tecnologia da Paraíba;26417;Ministério da Educação;26000;940394847.92;873440489.28;768542157.99
+2025;Instituto Federal de Educação, Ciência e Tecnologia de Pernambuco;26418;Ministério da Educação;26000;828456424.11;797152166.29;717472490.81
+2025;Instituto Federal de Educação, Ciência e Tecnologia do Sertão de Pernambuco;26430;Ministério da Educação;26000;327124196.98;302514024.72;268555078.98
+2025;Instituto Federal de Educação, Ciência e Tecnologia do Piauí;26431;Ministério da Educação;26000;822208924.7;788863873.32;689033135.05
+2025;Instituto Federal de Educação, Ciência e Tecnologia do Rio Grande do Norte;26435;Ministério da Educação;26000;1118010985.71;1059159877.49;941690106.26
+2025;Instituto Federal de Educação, Ciência e Tecnologia de Sergipe;26423;Ministério da Educação;26000;439290820.14;423178694.46;374314755.22

@@ -47,7 +47,7 @@ def carregar_dados(caminho_arquivo="df_final_corrigido.csv"):
         try:
             df = pd.read_csv(caminho_arquivo, sep=';')
         except UnicodeDecodeError:
-            st.warning(f"Falha ao decodificar '{caminho_arquivo}' como UTF-8 — tentando latin1 (ISO-8859-1).")
+            # st.warning(f"Falha ao decodificar '{caminho_arquivo}' como UTF-8 — tentando latin1 (ISO-8859-1).")
             df = pd.read_csv(caminho_arquivo, sep=';', encoding='latin1')
         except Exception:
             # re-raise para ser pego pelo outer except
@@ -85,6 +85,24 @@ def carregar_dados(caminho_arquivo="df_final_corrigido.csv"):
     except Exception as e:
         st.error(f"Erro inesperado ao ler o arquivo: {e}")
         return pd.DataFrame()
+
+@st.cache_data
+def carregar_dados_despesas(caminho_arquivo="df_despesas_nordeste.csv"):
+        try:
+            df = pd.read_csv(caminho_arquivo, sep=';', encoding='latin1')
+            
+            # Converter colunas financeiras para numérico
+            cols_financeiras = ['empenhado', 'liquidado', 'pago']
+            for col in cols_financeiras:
+                if col in df.columns:
+                    # Se for string, remove pontos e troca vírgula por ponto
+                    if df[col].dtype == 'object':
+                        df[col] = df[col].astype(str).str.replace('.', '', regex=False).str.replace(',', '.', regex=False)
+                    df[col] = pd.to_numeric(df[col], errors='coerce').fillna(0)
+            return df
+        except Exception as e:
+            st.error(f"Erro ao carregar despesas: {e}")
+            return pd.DataFrame()
 
 # --- BLOCO 4: FUNÇÕES DE APOIO (Helpers) ---
 
@@ -212,12 +230,12 @@ def find_supplier_name_column(df):
 
 # --- BLOCO 5: LAYOUT DA INTERFACE (Sidebar e Filtros) ---
 
-st.sidebar.title("Portal da Transparência - UNIVASF")
+st.sidebar.title("Portal da Transparência - IFEs NE")
 
 # 1. Navegação entre páginas
 pagina_selecionada = st.sidebar.radio(
     "Navegação",
-    ["Visão Geral (Contratos)", "Licitações (em breve)", "Despesas (em breve)"],
+    ["Visão Geral (Contratos)", "Despesas"],
     key="nav_principal"
 )
 
@@ -306,7 +324,7 @@ if pagina_selecionada == "Visão Geral (Contratos)":
     if 'df_filtrado' not in locals() or df_filtrado.empty:
         st.warning("Nenhum dado encontrado. Verifique o arquivo CSV ou os filtros selecionados.")
     else:
-        st.title("📊 Painel de Contratos da UNIVASF")
+        st.title("📊 Painel de Contratos - IFEs NE")
         st.markdown(f"Dados de {data_inicio.strftime('%d/%m/%Y')} até {data_fim.strftime('%d/%m/%Y')}")
 
         # --- LINHA 1: KPIs (Grandes Números) ---
@@ -1201,10 +1219,101 @@ if pagina_selecionada == "Visão Geral (Contratos)":
             st.info('Não há contratos no subconjunto filtrado para exibir detalhes.')
 
 # Se o usuário clicar na outra página
-elif pagina_selecionada == "Licitações (em breve)":
-    st.title("🚧 Painel de Licitações")
-    st.info("Esta seção ainda está em construção.")
+elif pagina_selecionada == "Despesas":
+    st.title("📑 Execução Orçamentária - IFEs Nordeste")
+    st.markdown("Esta seção analisa o fluxo financeiro: do compromisso da despesa (**Empenhado**) até o desembolso real (**Pago**).")
 
+    df_desp = carregar_dados_despesas()
+
+    if df_desp.empty:
+        st.warning("Arquivo de despesas não encontrado ou vazio.")
+    else:
+        # --- FILTROS NA SIDEBAR ---
+        st.sidebar.header("Filtros de Despesas")
+        
+        # Filtro de IFES (Multiselect com opção de "Todos")
+        lista_ifes = sorted(df_desp['orgao'].unique().tolist())
+        ifes_selecionadas = st.sidebar.multiselect(
+            "Selecione as Instituições",
+            options=lista_ifes,
+            default=[],
+            help="Se deixar vazio, mostrará todas as instituições."
+        )
+
+        # Filtro de Ano
+        anos_disponiveis = sorted(df_desp['ano'].unique().tolist())
+        anos_selecionados = st.sidebar.multiselect(
+            "Selecione os Anos",
+            options=anos_disponiveis,
+            default=anos_disponiveis
+        )
+
+        # Lógica de Filtragem
+        df_f = df_desp[df_desp['ano'].isin(anos_selecionados)]
+        if ifes_selecionadas:
+            df_f = df_f[df_f['orgao'].isin(ifes_selecionadas)]
+
+        # --- LINHA 1: KPIs ---
+        st.markdown("### Indicadores Consolidados")
+        m1, m2, m3, m4 = st.columns(4)
+        
+        total_emp = df_f['empenhado'].sum()
+        total_liq = df_f['liquidado'].sum()
+        total_pag = df_f['pago'].sum()
+        # Índice de Execução: Quanto do empenhado foi efetivamente pago
+        indice_exec = (total_pag / total_emp * 100) if total_emp > 0 else 0
+
+        m1.metric("Total Empenhado", formatar_valor(total_emp))
+        m2.metric("Total Liquidado", formatar_valor(total_liq))
+        m3.metric("Total Pago", formatar_valor(total_pag))
+        m4.metric("Índice de Pagamento", f"{indice_exec:.1f}%", help="Percentual do valor empenhado que já foi pago.")
+
+        st.markdown("---")
+
+        # --- LINHA 2: GRÁFICOS ---
+        col_g1, col_g2 = st.columns(2)
+
+        with col_g1:
+            st.markdown("#### Evolução: Empenhado vs Pago")
+            # Agrupa por ano para ver a tendência
+            df_timeline = df_f.groupby('ano')[['empenhado', 'pago']].sum().reset_index()
+            fig_line = px.line(df_timeline, x='ano', y=['empenhado', 'pago'],
+                               markers=True,
+                               title="Tendência de Empenho e Pagamento",
+                               labels={'value': 'Valor (R$)', 'ano': 'Ano', 'variable': 'Tipo'},
+                               color_discrete_sequence=['#1f77b4', '#2ca02c'])
+            st.plotly_chart(fig_line, use_container_width=True)
+
+        with col_g2:
+            st.markdown("#### Top 10 Instituições por Volume Pago")
+            df_inst = df_f.groupby('orgao')['pago'].sum().reset_index().nlargest(10, 'pago')
+            fig_bar = px.bar(df_inst, x='pago', y='orgao', orientation='h',
+                             title="Maiores Pagamentos Acumulados",
+                             labels={'pago': 'Total Pago (R$)', 'orgao': 'Instituição'},
+                             color='pago', color_continuous_scale='Blues')
+            st.plotly_chart(fig_bar, use_container_width=True)
+
+        # --- LINHA 3: ANÁLISE DE EFICIÊNCIA ---
+        st.markdown("### Análise de Eficiência Orçamentária por IFES")
+        st.markdown("O gráfico abaixo mostra o percentual de execução (Pago/Empenhado). Valores próximos a 100% indicam que a instituição está conseguindo pagar tudo o que planejou e empenhou.")
+        
+        df_efet = df_f.groupby('orgao')[['empenhado', 'pago']].sum().reset_index()
+        df_efet['% Execução'] = (df_efet['pago'] / df_efet['empenhado'] * 100).round(2)
+        df_efet = df_efet.sort_values('% Execução', ascending=False)
+
+        fig_efet = px.bar(df_efet, x='orgao', y='% Execução',
+                          title="Ranking de Eficiência de Pagamento (%)",
+                          labels={'% Execução': 'Percentual Pago/Empenhado', 'orgao': 'IFES'},
+                          color='% Execução', color_continuous_scale='RdYlGn')
+        st.plotly_chart(fig_efet, use_container_width=True)
+
+        # Exibição da Tabela de Dados
+        with st.expander("Ver Tabela de Dados Detalhada"):
+            st.dataframe(df_f.style.format({
+                'empenhado': 'R$ {:,.2f}',
+                'liquidado': 'R$ {:,.2f}',
+                'pago': 'R$ {:,.2f}'
+            }))
 # Se os dados nem sequer foram carregados no início
 elif 'df_contratos' in locals() and df_contratos.empty:
     st.info("Aguardando geração do arquivo de dados 'dados_contratos.csv'...")
