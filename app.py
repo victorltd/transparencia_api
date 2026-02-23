@@ -53,6 +53,9 @@ def carregar_dados(caminho_arquivo="df_final_corrigido.csv"):
             # re-raise para ser pego pelo outer except
             raise
         
+        # Normaliza nomes das colunas para evitar erro de KeyError
+        df.columns = [col.strip() for col in df.columns]
+        # st.write("Colunas carregadas:", list(df.columns))
         # AJUSTADO: Nomes das colunas de data conforme sua imagem
         colunas_data = ['dataAssinatura', 'dataInicioVigencia', 'dataFimVigencia']
         for col in colunas_data:
@@ -249,26 +252,33 @@ if not df_contratos.empty:
 
     # 2. Filtros Globais (só aparecem se os dados existirem)
     st.sidebar.header("Filtros da Página")
-    
-    # AJUSTADO: Usa 'dataAssinatura'
-    data_min_contrato = df_contratos['dataAssinatura'].min().date()
-    data_max_contrato = df_contratos['dataAssinatura'].max().date()
+    # Busca dinâmica do nome da coluna 'dataAssinatura'
+    col_data = None
+    for col in df_contratos.columns:
+        if col.lower().strip() == 'dataassinatura':
+            col_data = col
+            break
+    if col_data is None:
+        st.error("Coluna 'dataAssinatura' não encontrada. Colunas disponíveis: " + str(list(df_contratos.columns)))
+    else:
+        data_min_contrato = df_contratos[col_data].min().date()
+        data_max_contrato = df_contratos[col_data].max().date()
 
-    data_inicio = st.sidebar.date_input(
-        "Data de Assinatura (Início)",
-        value=data_min_contrato,
-        min_value=data_min_contrato,
-        max_value=data_max_contrato,
-        key="filtro_data_inicio"
-    )
+        data_inicio = st.sidebar.date_input(
+            "Data de Assinatura (Início)",
+            value=data_min_contrato,
+            min_value=data_min_contrato,
+            max_value=data_max_contrato,
+            key="filtro_data_inicio"
+        )
 
-    data_fim = st.sidebar.date_input(
-        "Data de Assinatura (Fim)",
-        value=data_max_contrato,
-        min_value=data_min_contrato,
-        max_value=data_max_contrato,
-        key="filtro_data_fim"
-    )
+        data_fim = st.sidebar.date_input(
+            "Data de Assinatura (Fim)",
+            value=data_max_contrato,
+            min_value=data_min_contrato,
+            max_value=data_max_contrato,
+            key="filtro_data_fim"
+        )
 
     # AJUSTADO: Usa 'nome_uge' (conforme sua imagem)
     # Detecta coluna entre candidatos (helper usado em várias partes do app)
