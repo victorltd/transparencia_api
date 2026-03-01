@@ -25,7 +25,7 @@ Este projeto coleta, processa e visualiza dados de contratos e despesas de órg�
 ## Como executar localmente
 1. **Clone o repositório:**
 	```bash
-	git clone <url-do-repo>
+	git clone https://github.com/victorltd/transparencia_api
 	cd transparencia_api
 	```
 2. **Configure a chave da API:**
