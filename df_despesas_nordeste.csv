@@ -19,7 +19,7 @@ ano;orgao;codigoOrgao;orgaoSuperior;codigoOrgaoSuperior;empenhado;liquidado;pago
 2015;Fundação Universidade Federal de Sergipe;26281;Ministério da Educação;26000;617773191.21;594779675.85;583009154.27
 2015;Instituto Federal de Educação, Ciência e Tecnologia de Alagoas;26402;Ministério da Educação;26000;320468785.44;298072613.55;285874203.42
 2015;Instituto Federal de Educação, Ciência e Tecnologia da Bahia;26427;Ministério da Educação;26000;456206331.85;417538550.85;406579828.76
-2015;Instituto Federal de Educação, Ciência e Tecnologia Baiano;26404;Ministério da Educação;26000;223669151.05;198906682.44;189297550.96
+2015;Instituto Federal de Educação, Ciência e Tecnologia Baiano;26404;Ministério da Educação;26000;217560040.92;194204268.7;185650135.9
 2015;Instituto Federal de Educação, Ciência e Tecnologia do Ceará;26405;Ministério da Educação;26000;489281598.28;450411487.0;442432254.32
 2015;Instituto Federal de Educação, Ciência e Tecnologia do Maranhão;26408;Ministério da Educação;26000;429378550.38;397167809.54;382757202.58
 2015;Instituto Federal de Educação, Ciência e Tecnologia da Paraíba;26417;Ministério da Educação;26000;412825402.57;380641070.7;375062670.14
@@ -48,7 +48,7 @@ ano;orgao;codigoOrgao;orgaoSuperior;codigoOrgaoSuperior;empenhado;liquidado;pago
 2016;Fundação Universidade Federal de Sergipe;26281;Ministério da Educação;26000;701977746.94;640769350.6;633317671.68
 2016;Instituto Federal de Educação, Ciência e Tecnologia de Alagoas;26402;Ministério da Educação;26000;356519472.46;324080723.55;322069050.99
 2016;Instituto Federal de Educação, Ciência e Tecnologia da Bahia;26427;Ministério da Educação;26000;502517662.2;457255748.45;454864232.61
-2016;Instituto Federal de Educação, Ciência e Tecnologia Baiano;26404;Ministério da Educação;26000;247199876.63;219459198.86;218250051.11
+2016;Instituto Federal de Educação, Ciência e Tecnologia Baiano;26404;Ministério da Educação;26000;237818127.91;215853147.32;214881857.54
 2016;Instituto Federal de Educação, Ciência e Tecnologia do Ceará;26405;Ministério da Educação;26000;553669015.49;518088408.85;515139544.58
 2016;Instituto Federal de Educação, Ciência e Tecnologia do Maranhão;26408;Ministério da Educação;26000;502627112.84;472563672.89;470400639.09
 2016;Instituto Federal de Educação, Ciência e Tecnologia da Paraíba;26417;Ministério da Educação;26000;451125213.04;425677522.82;422389987.57
@@ -77,7 +77,7 @@ ano;orgao;codigoOrgao;orgaoSuperior;codigoOrgaoSuperior;empenhado;liquidado;pago
 2017;Fundação Universidade Federal de Sergipe;26281;Ministério da Educação;26000;759505092.13;707308401.25;699998580.7
 2017;Instituto Federal de Educação, Ciência e Tecnologia de Alagoas;26402;Ministério da Educação;26000;382779057.37;365564974.32;360704194.65
 2017;Instituto Federal de Educação, Ciência e Tecnologia da Bahia;26427;Ministério da Educação;26000;544885669.03;504943321.32;503654320.28
-2017;Instituto Federal de Educação, Ciência e Tecnologia Baiano;26404;Ministério da Educação;26000;293632188.56;269194368.05;268388484.87
+2017;Instituto Federal de Educação, Ciência e Tecnologia Baiano;26404;Ministério da Educação;26000;284607400.53;263229605.8;262618590.31
 2017;Instituto Federal de Educação, Ciência e Tecnologia do Ceará;26405;Ministério da Educação;26000;629336526.99;591996226.26;589759133.89
 2017;Instituto Federal de Educação, Ciência e Tecnologia do Maranhão;26408;Ministério da Educação;26000;580406393.87;544855271.08;541883796.19
 2017;Instituto Federal de Educação, Ciência e Tecnologia da Paraíba;26417;Ministério da Educação;26000;514289816.48;480226030.53;478114145.15
@@ -106,7 +106,7 @@ ano;orgao;codigoOrgao;orgaoSuperior;codigoOrgaoSuperior;empenhado;liquidado;pago
 2018;Fundação Universidade Federal de Sergipe;26281;Ministério da Educação;26000;807137293.78;754001701.98;700364282.82
 2018;Instituto Federal de Educação, Ciência e Tecnologia de Alagoas;26402;Ministério da Educação;26000;425316558.16;400153571.5;370038008.77
 2018;Instituto Federal de Educação, Ciência e Tecnologia da Bahia;26427;Ministério da Educação;26000;595998657.85;545781995.84;501048799.49
-2018;Instituto Federal de Educação, Ciência e Tecnologia Baiano;26404;Ministério da Educação;26000;318174295.32;300834481.66;280594754.7
+2018;Instituto Federal de Educação, Ciência e Tecnologia Baiano;26404;Ministério da Educação;26000;311924987.28;296707366.45;276541713.65
 2018;Instituto Federal de Educação, Ciência e Tecnologia do Ceará;26405;Ministério da Educação;26000;711688275.56;664879779.66;615281626.19
 2018;Instituto Federal de Educação, Ciência e Tecnologia do Maranhão;26408;Ministério da Educação;26000;616636180.67;580190731.58;539671152.69
 2018;Instituto Federal de Educação, Ciência e Tecnologia da Paraíba;26417;Ministério da Educação;26000;551632316.92;512425516.57;471515482.36
@@ -135,7 +135,7 @@ ano;orgao;codigoOrgao;orgaoSuperior;codigoOrgaoSuperior;empenhado;liquidado;pago
 2019;Fundação Universidade Federal de Sergipe;26281;Ministério da Educação;26000;833980438.69;757815350.26;707389347.33
 2019;Instituto Federal de Educação, Ciência e Tecnologia de Alagoas;26402;Ministério da Educação;26000;463959154.36;417489645.05;386211521.63
 2019;Instituto Federal de Educação, Ciência e Tecnologia da Bahia;26427;Ministério da Educação;26000;634755799.73;602229904.84;560913183.13
-2019;Instituto Federal de Educação, Ciência e Tecnologia Baiano;26404;Ministério da Educação;26000;337134607.37;313182438.71;292599562.81
+2019;Instituto Federal de Educação, Ciência e Tecnologia Baiano;26404;Ministério da Educação;26000;330436012.0;308973557.55;288397194.49
 2019;Instituto Federal de Educação, Ciência e Tecnologia do Ceará;26405;Ministério da Educação;26000;756313151.19;710456583.58;656299342.7
 2019;Instituto Federal de Educação, Ciência e Tecnologia do Maranhão;26408;Ministério da Educação;26000;672015032.3;641017747.28;594931992.62
 2019;Instituto Federal de Educação, Ciência e Tecnologia da Paraíba;26417;Ministério da Educação;26000;577193621.36;543680255.47;501642765.5
@@ -166,7 +166,7 @@ ano;orgao;codigoOrgao;orgaoSuperior;codigoOrgaoSuperior;empenhado;liquidado;pago
 2020;Fundação Universidade Federal de Sergipe;26281;Ministério da Educação;26000;833811298.98;790013706.14;738099918.44
 2020;Instituto Federal de Educação, Ciência e Tecnologia de Alagoas;26402;Ministério da Educação;26000;460188098.4;427975456.29;395482345.24
 2020;Instituto Federal de Educação, Ciência e Tecnologia da Bahia;26427;Ministério da Educação;26000;623915118.64;592351267.49;550882237.5
-2020;Instituto Federal de Educação, Ciência e Tecnologia Baiano;26404;Ministério da Educação;26000;349007696.18;316596863.52;295471510.25
+2020;Instituto Federal de Educação, Ciência e Tecnologia Baiano;26404;Ministério da Educação;26000;342872164.21;313855155.74;292832924.62
 2020;Instituto Federal de Educação, Ciência e Tecnologia do Ceará;26405;Ministério da Educação;26000;817540012.54;750421847.85;689517398.32
 2020;Instituto Federal de Educação, Ciência e Tecnologia do Maranhão;26408;Ministério da Educação;26000;656549891.89;622906366.0;579262890.39
 2020;Instituto Federal de Educação, Ciência e Tecnologia da Paraíba;26417;Ministério da Educação;26000;601483829.09;563139916.6;521076945.93
@@ -197,7 +197,7 @@ ano;orgao;codigoOrgao;orgaoSuperior;codigoOrgaoSuperior;empenhado;liquidado;pago
 2021;Fundação Universidade Federal de Sergipe;26281;Ministério da Educação;26000;837490703.04;811091389.66;757603527.77
 2021;Instituto Federal de Educação, Ciência e Tecnologia de Alagoas;26402;Ministério da Educação;26000;458394228.24;434139002.3;400174794.41
 2021;Instituto Federal de Educação, Ciência e Tecnologia da Bahia;26427;Ministério da Educação;26000;627991026.32;603820528.63;557789213.13
-2021;Instituto Federal de Educação, Ciência e Tecnologia Baiano;26404;Ministério da Educação;26000;353103286.83;324916388.27;299970395.31
+2021;Instituto Federal de Educação, Ciência e Tecnologia Baiano;26404;Ministério da Educação;26000;347409440.14;322839990.9;298261767.82
 2021;Instituto Federal de Educação, Ciência e Tecnologia do Ceará;26405;Ministério da Educação;26000;811250248.25;777000839.0;714257688.3
 2021;Instituto Federal de Educação, Ciência e Tecnologia do Maranhão;26408;Ministério da Educação;26000;684351095.85;640801789.83;582828706.34
 2021;Instituto Federal de Educação, Ciência e Tecnologia da Paraíba;26417;Ministério da Educação;26000;606292850.52;572715020.54;528336347.94
@@ -228,7 +228,7 @@ ano;orgao;codigoOrgao;orgaoSuperior;codigoOrgaoSuperior;empenhado;liquidado;pago
 2022;Fundação Universidade Federal de Sergipe;26281;Ministério da Educação;26000;868804000.38;836286786.13;782601941.42
 2022;Instituto Federal de Educação, Ciência e Tecnologia de Alagoas;26402;Ministério da Educação;26000;465654387.88;424696206.33;394611736.63
 2022;Instituto Federal de Educação, Ciência e Tecnologia da Bahia;26427;Ministério da Educação;26000;672012155.42;649737074.64;601515550.56
-2022;Instituto Federal de Educação, Ciência e Tecnologia Baiano;26404;Ministério da Educação;26000;374777897.34;349871755.55;324847151.51
+2022;Instituto Federal de Educação, Ciência e Tecnologia Baiano;26404;Ministério da Educação;26000;368783950.94;346302142.21;321630852.41
 2022;Instituto Federal de Educação, Ciência e Tecnologia do Ceará;26405;Ministério da Educação;26000;859071465.27;828383761.64;766662073.4
 2022;Instituto Federal de Educação, Ciência e Tecnologia do Maranhão;26408;Ministério da Educação;26000;725917514.32;679472745.61;627421763.63
 2022;Instituto Federal de Educação, Ciência e Tecnologia da Paraíba;26417;Ministério da Educação;26000;636278543.05;603858298.33;557773550.72
@@ -259,7 +259,7 @@ ano;orgao;codigoOrgao;orgaoSuperior;codigoOrgaoSuperior;empenhado;liquidado;pago
 2023;Fundação Universidade Federal de Sergipe;26281;Ministério da Educação;26000;978222332.93;936865936.53;866305246.32
 2023;Instituto Federal de Educação, Ciência e Tecnologia de Alagoas;26402;Ministério da Educação;26000;473067882.86;441828799.68;401912102.52
 2023;Instituto Federal de Educação, Ciência e Tecnologia da Bahia;26427;Ministério da Educação;26000;777640449.2;728227348.08;664371047.33
-2023;Instituto Federal de Educação, Ciência e Tecnologia Baiano;26404;Ministério da Educação;26000;434254594.68;400120471.68;367783326.19
+2023;Instituto Federal de Educação, Ciência e Tecnologia Baiano;26404;Ministério da Educação;26000;422952243.58;395287586.14;363019095.86
 2023;Instituto Federal de Educação, Ciência e Tecnologia do Ceará;26405;Ministério da Educação;26000;1024389243.08;946454046.04;850791772.72
 2023;Instituto Federal de Educação, Ciência e Tecnologia do Maranhão;26408;Ministério da Educação;26000;906223957.19;816236681.35;729411488.0
 2023;Instituto Federal de Educação, Ciência e Tecnologia da Paraíba;26417;Ministério da Educação;26000;709914518.26;678522630.24;604048503.88
@@ -290,7 +290,7 @@ ano;orgao;codigoOrgao;orgaoSuperior;codigoOrgaoSuperior;empenhado;liquidado;pago
 2024;Fundação Universidade Federal de Sergipe;26281;Ministério da Educação;26000;1034728957.91;1009201293.44;936392143.83
 2024;Instituto Federal de Educação, Ciência e Tecnologia de Alagoas;26402;Ministério da Educação;26000;519348577.26;481900955.63;441117903.45
 2024;Instituto Federal de Educação, Ciência e Tecnologia da Bahia;26427;Ministério da Educação;26000;823530894.3;794191768.86;719731957.17
-2024;Instituto Federal de Educação, Ciência e Tecnologia Baiano;26404;Ministério da Educação;26000;473904408.28;425389087.69;391819061.7
+2024;Instituto Federal de Educação, Ciência e Tecnologia Baiano;26404;Ministério da Educação;26000;462822998.54;421145409.38;387715767.28
 2024;Instituto Federal de Educação, Ciência e Tecnologia do Ceará;26405;Ministério da Educação;26000;1065689175.81;1014976572.83;906734773.15
 2024;Instituto Federal de Educação, Ciência e Tecnologia do Maranhão;26408;Ministério da Educação;26000;978243302.43;911226767.21;811826810.7
 2024;Instituto Federal de Educação, Ciência e Tecnologia da Paraíba;26417;Ministério da Educação;26000;771923908.31;727999560.46;651167557.1
@@ -321,7 +321,7 @@ ano;orgao;codigoOrgao;orgaoSuperior;codigoOrgaoSuperior;empenhado;liquidado;pago
 2025;Fundação Universidade Federal de Sergipe;26281;Ministério da Educação;26000;1177441543.09;1158506009.13;1060044002.38
 2025;Instituto Federal de Educação, Ciência e Tecnologia de Alagoas;26402;Ministério da Educação;26000;599921285.95;569393544.41;512516780.17
 2025;Instituto Federal de Educação, Ciência e Tecnologia da Bahia;26427;Ministério da Educação;26000;946381990.69;914478202.18;821855848.35
-2025;Instituto Federal de Educação, Ciência e Tecnologia Baiano;26404;Ministério da Educação;26000;591051458.48;540042271.25;488422008.09
+2025;Instituto Federal de Educação, Ciência e Tecnologia Baiano;26404;Ministério da Educação;26000;582607210.46;534276666.45;482964879.37
 2025;Instituto Federal de Educação, Ciência e Tecnologia do Ceará;26405;Ministério da Educação;26000;1241340221.48;1182254282.6;1045922028.61
 2025;Instituto Federal de Educação, Ciência e Tecnologia do Maranhão;26408;Ministério da Educação;26000;1185969622.33;1121245832.6;1009321217.98
 2025;Instituto Federal de Educação, Ciência e Tecnologia da Paraíba;26417;Ministério da Educação;26000;940394847.92;873440489.28;768542157.99
