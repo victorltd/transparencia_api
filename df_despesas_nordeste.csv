@@ -1,6 +1,8 @@
 ano;orgao;codigoOrgao;orgaoSuperior;codigoOrgaoSuperior;empenhado;liquidado;pago
 2015;Universidade Federal de Alagoas;26231;Ministério da Educação;26000;842157404.17;797599316.24;782068292.97
+2015;Universidade Federal da Bahia;26232;Ministério da Educação;26000;1666184223.32;1609587560.69;1565783031.74
 2015;Universidade Federal do Oeste da Bahia;26447;Ministério da Educação;26000;40116407.17;29980201.17;29901224.48
+2015;Universidade Federal do Recôncavo da Bahia;26351;Ministério da Educação;26000;210407803.41;204750045.82;199497952.61
 2015;Universidade Federal do Sul da Bahia;26450;Ministério da Educação;26000;42855705.05;35186767.25;34536318.69
 2015;Universidade Federal do Ceará;26233;Ministério da Educação;26000;1492337253.74;1427407219.97;1415001113.8
 2015;Universidade Federal do Cariri;26449;Ministério da Educação;26000;72896271.43;60091069.13;59799103.97
@@ -42,7 +44,6 @@ ano;orgao;codigoOrgao;orgaoSuperior;codigoOrgaoSuperior;empenhado;liquidado;pago
 2016;Fundação Universidade Federal do Vale do São Francisco;26230;Ministério da Educação;26000;243108431.26;190099198.42;188667980.36
 2016;Fundação Universidade Federal do Piauí;26279;Ministério da Educação;26000;784246679.36;724060138.02;720785682.56
 2016;Universidade Federal do Rio Grande do Norte;26243;Ministério da Educação;26000;1647046513.93;1544567678.96;1538796767.64
-2016;Universidade Federal Rural do Semi-Árido;26264;Ministério da Educação;26000;266637845.88;232070809.18;231322506.01
 2016;Fundação Universidade Federal de Sergipe;26281;Ministério da Educação;26000;701977746.94;640769350.6;633317671.68
 2016;Instituto Federal de Educação, Ciência e Tecnologia de Alagoas;26402;Ministério da Educação;26000;356519472.46;324080723.55;322069050.99
 2016;Instituto Federal de Educação, Ciência e Tecnologia da Bahia;26427;Ministério da Educação;26000;502517662.2;457255748.45;454864232.61
@@ -96,12 +97,15 @@ ano;orgao;codigoOrgao;orgaoSuperior;codigoOrgaoSuperior;empenhado;liquidado;pago
 2018;Universidade Federal da Paraíba;26240;Ministério da Educação;26000;1839599030.63;1786888724.88;1644951036.25
 2018;Universidade Federal de Campina Grande;26252;Ministério da Educação;26000;807469555.49;749514960.15;690884847.13
 2018;Universidade Federal de Pernambuco;26242;Ministério da Educação;26000;1867017473.16;1806649522.75;1684544069.95
+2018;Universidade Federal Rural de Pernambuco;26248;Ministério da Educação;26000;664490426.18;631424179.68;590705800.17
 2018;Fundação Universidade Federal do Vale do São Francisco;26230;Ministério da Educação;26000;224662792.75;201822441.36;191219963.9
+2018;Fundação Universidade Federal do Piauí;26279;Ministério da Educação;26000;840744377.42;809293490.56;751216827.51
 2018;Universidade Federal do Rio Grande do Norte;26243;Ministério da Educação;26000;1875108978.8;1716398298.36;1595071654.65
 2018;Universidade Federal Rural do Semi-Árido;26264;Ministério da Educação;26000;295645455.15;274507479.96;254360228.77
 2018;Fundação Universidade Federal de Sergipe;26281;Ministério da Educação;26000;807137293.78;754001701.98;700364282.82
 2018;Instituto Federal de Educação, Ciência e Tecnologia de Alagoas;26402;Ministério da Educação;26000;425316558.16;400153571.5;370038008.77
 2018;Instituto Federal de Educação, Ciência e Tecnologia da Bahia;26427;Ministério da Educação;26000;595998657.85;545781995.84;501048799.49
+2018;Instituto Federal de Educação, Ciência e Tecnologia Baiano;26404;Ministério da Educação;26000;311924987.28;296707366.45;276541713.65
 2018;Instituto Federal de Educação, Ciência e Tecnologia do Ceará;26405;Ministério da Educação;26000;711688275.56;664879779.66;615281626.19
 2018;Instituto Federal de Educação, Ciência e Tecnologia do Maranhão;26408;Ministério da Educação;26000;616636180.67;580190731.58;539671152.69
 2018;Instituto Federal de Educação, Ciência e Tecnologia da Paraíba;26417;Ministério da Educação;26000;551632316.92;512425516.57;471515482.36
@@ -110,9 +114,25 @@ ano;orgao;codigoOrgao;orgaoSuperior;codigoOrgaoSuperior;empenhado;liquidado;pago
 2018;Instituto Federal de Educação, Ciência e Tecnologia do Piauí;26431;Ministério da Educação;26000;446043038.16;427439961.56;396987935.47
 2018;Instituto Federal de Educação, Ciência e Tecnologia do Rio Grande do Norte;26435;Ministério da Educação;26000;638851901.84;578101384.49;529476028.78
 2018;Instituto Federal de Educação, Ciência e Tecnologia de Sergipe;26423;Ministério da Educação;26000;269898213.38;255968092.98;236208879.34
+2019;Universidade Federal de Alagoas;26231;Ministério da Educação;26000;1016511638.33;995449054.74;931114963.79
+2019;Universidade Federal da Bahia;26232;Ministério da Educação;26000;2055958382.37;1999160761.52;1874445303.68
+2019;Universidade Federal do Oeste da Bahia;26447;Ministério da Educação;26000;114305030.82;108787575.17;102267875.39
+2019;Universidade Federal do Recôncavo da Bahia;26351;Ministério da Educação;26000;318307098.3;298547864.07;278020952.62
+2019;Universidade Federal do Sul da Bahia;26450;Ministério da Educação;26000;124455142.11;107516299.27;101729150.88
+2019;Universidade Federal do Ceará;26233;Ministério da Educação;26000;1763191868.03;1713830893.39;1610705131.6
 2019;Universidade Federal do Cariri;26449;Ministério da Educação;26000;118885258.76;111299269.5;104883893.6
+2019;Universidade da Integração Internacional da Lusofonia Afro-Brasileira;26442;Ministério da Educação;26000;150775039.44;139685299.52;133034426.18
 2019;Fundação Universidade do Maranhão;26272;Ministério da Educação;26000;920744035.34;901992366.56;845883270.05
 2019;Universidade Federal da Paraíba;26240;Ministério da Educação;26000;1886088082.12;1834748077.51;1691972822.83
+2019;Universidade Federal de Campina Grande;26252;Ministério da Educação;26000;836852626.51;759167014.95;700801500.15
+2019;Universidade Federal de Pernambuco;26242;Ministério da Educação;26000;1906461675.83;1846261315.5;1725471856.19
+2019;Universidade Federal Rural de Pernambuco;26248;Ministério da Educação;26000;683151181.18;656457284.32;611865570.71
+2019;Fundação Universidade Federal do Vale do São Francisco;26230;Ministério da Educação;26000;232417286.96;207299326.71;196185230.92
+2019;Fundação Universidade Federal do Piauí;26279;Ministério da Educação;26000;877195680.64;838097539.53;781527229.1
+2019;Universidade Federal do Rio Grande do Norte;26243;Ministério da Educação;26000;1918659629.59;1805836712.58;1656181601.05
+2019;Universidade Federal Rural do Semi-Árido;26264;Ministério da Educação;26000;308670602.68;283045167.87;264836287.35
+2019;Fundação Universidade Federal de Sergipe;26281;Ministério da Educação;26000;833980438.69;757815350.26;707389347.33
+2019;Instituto Federal de Educação, Ciência e Tecnologia de Alagoas;26402;Ministério da Educação;26000;463959154.36;417489645.05;386211521.63
 2019;Instituto Federal de Educação, Ciência e Tecnologia da Bahia;26427;Ministério da Educação;26000;634755799.73;602229904.84;560913183.13
 2019;Instituto Federal de Educação, Ciência e Tecnologia Baiano;26404;Ministério da Educação;26000;330436012.0;308973557.55;288397194.49
 2019;Instituto Federal de Educação, Ciência e Tecnologia do Ceará;26405;Ministério da Educação;26000;756313151.19;710456583.58;656299342.7
@@ -208,6 +228,7 @@ ano;orgao;codigoOrgao;orgaoSuperior;codigoOrgaoSuperior;empenhado;liquidado;pago
 2022;Instituto Federal de Educação, Ciência e Tecnologia de Alagoas;26402;Ministério da Educação;26000;465654387.88;424696206.33;394611736.63
 2022;Instituto Federal de Educação, Ciência e Tecnologia da Bahia;26427;Ministério da Educação;26000;672012155.42;649737074.64;601515550.56
 2022;Instituto Federal de Educação, Ciência e Tecnologia Baiano;26404;Ministério da Educação;26000;368783950.94;346302142.21;321630852.41
+2022;Instituto Federal de Educação, Ciência e Tecnologia do Ceará;26405;Ministério da Educação;26000;859071465.27;828383761.64;766662073.4
 2022;Instituto Federal de Educação, Ciência e Tecnologia do Maranhão;26408;Ministério da Educação;26000;725917514.32;679472745.61;627421763.63
 2022;Instituto Federal de Educação, Ciência e Tecnologia da Paraíba;26417;Ministério da Educação;26000;636278543.05;603858298.33;557773550.72
 2022;Instituto Federal de Educação, Ciência e Tecnologia de Pernambuco;26418;Ministério da Educação;26000;623270214.88;603502908.05;557760992.62
@@ -281,6 +302,7 @@ ano;orgao;codigoOrgao;orgaoSuperior;codigoOrgaoSuperior;empenhado;liquidado;pago
 2025;Universidade Federal da Bahia;26232;Ministério da Educação;26000;2706510716.72;2657917302.4;2457221238.69
 2025;Universidade Federal do Oeste da Bahia;26447;Ministério da Educação;26000;176032150.18;169827145.48;155262319.17
 2025;Universidade Federal do Recôncavo da Bahia;26351;Ministério da Educação;26000;533332513.26;513135330.78;457979028.23
+2025;Universidade Federal do Sul da Bahia;26450;Ministério da Educação;26000;202229883.51;194227934.6;177594751.91
 2025;Universidade Federal do Ceará;26233;Ministério da Educação;26000;2357229644.12;2274575420.76;2053711366.33
 2025;Universidade Federal do Cariri;26449;Ministério da Educação;26000;199494591.61;190213659.35;172040517.81
 2025;Universidade da Integração Internacional da Lusofonia Afro-Brasileira;26442;Ministério da Educação;26000;235510719.63;230055863.87;208897369.03
