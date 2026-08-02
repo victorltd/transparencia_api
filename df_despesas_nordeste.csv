@@ -44,6 +44,7 @@ ano;orgao;codigoOrgao;orgaoSuperior;codigoOrgaoSuperior;empenhado;liquidado;pago
 2016;Fundação Universidade Federal do Vale do São Francisco;26230;Ministério da Educação;26000;243108431.26;190099198.42;188667980.36
 2016;Fundação Universidade Federal do Piauí;26279;Ministério da Educação;26000;784246679.36;724060138.02;720785682.56
 2016;Universidade Federal do Rio Grande do Norte;26243;Ministério da Educação;26000;1647046513.93;1544567678.96;1538796767.64
+2016;Universidade Federal Rural do Semi-Árido;26264;Ministério da Educação;26000;266637845.88;232070809.18;231322506.01
 2016;Fundação Universidade Federal de Sergipe;26281;Ministério da Educação;26000;701977746.94;640769350.6;633317671.68
 2016;Instituto Federal de Educação, Ciência e Tecnologia de Alagoas;26402;Ministério da Educação;26000;356519472.46;324080723.55;322069050.99
 2016;Instituto Federal de Educação, Ciência e Tecnologia da Bahia;26427;Ministério da Educação;26000;502517662.2;457255748.45;454864232.61
@@ -145,19 +146,6 @@ ano;orgao;codigoOrgao;orgaoSuperior;codigoOrgaoSuperior;empenhado;liquidado;pago
 2019;Instituto Federal de Educação, Ciência e Tecnologia de Sergipe;26423;Ministério da Educação;26000;278412476.76;266639436.75;246201396.49
 2020;Universidade Federal de Alagoas;26231;Ministério da Educação;26000;1003694900.82;979046681.81;917200044.23
 2020;Universidade Federal da Bahia;26232;Ministério da Educação;26000;1968764533.96;1925267736.53;1807777358.71
-2020;Universidade Federal do Oeste da Bahia;26447;Ministério da Educação;26000;119893893.17;108428555.46;102705984.52
-2020;Universidade Federal do Recôncavo da Bahia;26351;Ministério da Educação;26000;325874440.03;297482427.11;277095447.57
-2020;Universidade Federal do Sul da Bahia;26450;Ministério da Educação;26000;117879959.94;102507819.27;96819941.96
-2020;Universidade Federal do Ceará;26233;Ministério da Educação;26000;1730049843.14;1658889077.61;1560696160.27
-2020;Universidade Federal do Cariri;26449;Ministério da Educação;26000;126054484.79;113586022.94;107003357.43
-2020;Universidade da Integração Internacional da Lusofonia Afro-Brasileira;26442;Ministério da Educação;26000;152571843.64;139736117.5;130699977.83
-2020;Fundação Universidade do Maranhão;26272;Ministério da Educação;26000;936243941.39;905242708.81;844217117.8
-2020;Universidade Federal da Paraíba;26240;Ministério da Educação;26000;1969751966.93;1901972200.12;1757876172.8
-2020;Universidade Federal de Campina Grande;26252;Ministério da Educação;26000;795427981.09;746475383.68;688871127.55
-2020;Universidade Federal de Pernambuco;26242;Ministério da Educação;26000;1895154922.1;1813526870.83;1697701927.12
-2020;Universidade Federal Rural de Pernambuco;26248;Ministério da Educação;26000;670909548.58;635667292.99;595557351.05
-2020;Universidade Federal do Agreste de Pernambuco;26456;Ministério da Educação;26000;37320498.72;34900999.55;31067521.96
-2020;Fundação Universidade Federal do Vale do São Francisco;26230;Ministério da Educação;26000;245125381.09;217471673.31;205292797.33
 2020;Fundação Universidade Federal do Piauí;26279;Ministério da Educação;26000;851977782.52;811562323.21;759227701.05
 2020;Universidade Federal do Delta do Parnaíba;26455;Ministério da Educação;26000;36228590.05;32230411.93;27944041.9
 2020;Universidade Federal do Rio Grande do Norte;26243;Ministério da Educação;26000;1944171174.22;1787973902.71;1667037227.28
